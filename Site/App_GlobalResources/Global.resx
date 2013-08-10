@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AreYourSureToRemoveRecord" xml:space="preserve">
+    <value>return confirm('Are your sure to remove record?');</value>
+  </data>
+  <data name="AreYourSureToRemoveRecords" xml:space="preserve">
+    <value>return confirm('Are your sure to remove records?');</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CantInitDataModelAssembly" xml:space="preserve">
+    <value>System can not init assembly with data model.</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="DatabaseName" xml:space="preserve">
+    <value>Database name</value>
+  </data>
+  <data name="DatabaseServer" xml:space="preserve">
+    <value>Database server</value>
+  </data>
+  <data name="DebugMode" xml:space="preserve">
+    <value>Debug mode</value>
+  </data>
+  <data name="EditPageTitle" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="FileStorageConnectionString" xml:space="preserve">
+    <value>File storage connection string</value>
+  </data>
+  <data name="FileStorageUrl" xml:space="preserve">
+    <value>File storage url</value>
+  </data>
+  <data name="FileUpload" xml:space="preserve">
+    <value>File upload</value>
+  </data>
+  <data name="FileUploadDescription" xml:space="preserve">
+    <value>You can upload files to server</value>
+  </data>
+  <data name="FileUploadPageTitle" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="HomePageTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="InsertPageTitle" xml:space="preserve">
+    <value>Create record at</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginPageTitle" xml:space="preserve">
+    <value>Authorization</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="LogPageTitle" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="ManagePageDescription" xml:space="preserve">
+    <value>Manage web-application</value>
+  </data>
+  <data name="ManagePageTitle" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="ModelIsEmpty" xml:space="preserve">
+    <value>Model has no tables</value>
+  </data>
+  <data name="NoSuchItem" xml:space="preserve">
+    <value>No such item</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="RecordPerPage" xml:space="preserve">
+    <value>Records per page</value>
+  </data>
+  <data name="RemoveSelected" xml:space="preserve">
+    <value>Remove selected</value>
+  </data>
+  <data name="RestartWebApplication" xml:space="preserve">
+    <value>Restart web-application</value>
+  </data>
+  <data name="RestartWebApplicationDescription" xml:space="preserve">
+    <value>RestartWebApplicationDescription</value>
+  </data>
+  <data name="ServerInformationDescription" xml:space="preserve">
+    <value>ServerInformationDescription</value>
+  </data>
+  <data name="ServerInformationPageTite" xml:space="preserve">
+    <value>Server Information</value>
+  </data>
+  <data name="ShowMessage" xml:space="preserve">
+    <value>Show message</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="SystemInformationDescription" xml:space="preserve">
+    <value>SystemInformationDescription</value>
+  </data>
+  <data name="SystemInformationPageTite" xml:space="preserve">
+    <value>System Information</value>
+  </data>
+  <data name="SystemLogDescription" xml:space="preserve">
+    <value>SystemLogDescription</value>
+  </data>
+  <data name="SystemWorkInDebugMode" xml:space="preserve">
+    <value>System work in &lt;b&gt;Debug&lt;/b&gt; mode.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Data Management System</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>Upload file</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="WebApplicationAddress" xml:space="preserve">
+    <value>Webapplication address</value>
+  </data>
+  <data name="WebApplicationLink" xml:space="preserve">
+    <value>Go to webapplication</value>
+  </data>
+  <data name="WebsiteStorageConnectionString" xml:space="preserve">
+    <value>Webapplication storage connection string</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Welcome to Data Management System</value>
+  </data>
+  <data name="YouLoginAs" xml:space="preserve">
+    <value>You login as</value>
+  </data>
+  <data name="YouWorkWithProject" xml:space="preserve">
+    <value>You work with project</value>
+  </data>
+  <data name="LoginButtonText" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+</root>

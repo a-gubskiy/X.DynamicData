@@ -1,0 +1,21 @@
+﻿@using X.DynamicData.Core
+@{
+    var message = "Изображение загружено";
+    var id = Request["CKEditorFuncNum"];
+    var file = Request.Files["upload"];
+
+    var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+
+    var bytes = new byte[file.InputStream.Length];
+    file.InputStream.Read(bytes, 0, bytes.Length);
+
+    var url = Global.UploadFile(bytes, fileName);
+
+    var callback = String.Format("{0}, '{1}', '{2}'", id, url, message);
+}
+
+<img src="@url"/>
+
+<script type='text/javascript'>
+    window.parent.CKEDITOR.tools.callFunction(@Html.Raw(@callback));
+</script>

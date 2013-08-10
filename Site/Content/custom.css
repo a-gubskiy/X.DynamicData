@@ -1,0 +1,670 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Scada:400italic,700italic,400,700&subset=latin,cyrillic);
+
+html, body {
+    font-family: 'Scada', sans-serif;
+}
+
+h1, h2, h3 {
+    color: #FD5814;
+    font-weight: normal;
+}
+
+a {
+    color: #333333 !important;
+    text-decoration: none !important;
+}
+
+    a:hover {
+        color: #FD5814 !important;
+        text-decoration: none !important;
+    }
+
+.btn-primary {
+    color: #FFF !important;
+}
+
+    .btn-primary:hover, table.DDDetailsTable a:hover {
+        text-decoration: none !important;
+    }
+
+.btn {
+    padding-right: 15px !important;
+    -ms-border-radius: 0 0 0 0 !important;
+    border-radius: 0 0 0 0 !important;
+}
+
+body {
+    padding: 0 !important;
+}
+
+header {
+    border-top: 3px solid #FD5814;
+}
+
+    header a {
+        color: #FFF !Important;
+    }
+
+
+[class^="icon-"],
+[class*=" icon-"] {
+    background-image: url("/images/glyphicons-halflings.png");
+}
+
+#startup_menu {
+}
+
+.content {
+    margin-top: 15px;
+    padding-right: 25px;
+}
+
+.delete, .edit {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url("/images/glyphicons-halflings.png");
+}
+
+    .delete:hover, .edit:hover {
+        background-image: url("/images/glyphicons-halflings-orange.png");
+    }
+
+.edit {
+    background-position: 0 -72px;
+}
+
+.delete {
+    background-position: -312px 0;
+}
+
+
+div.DDBottomHyperLink a:hover {
+    color: #FD5814 !important;
+    text-decoration: none !important;
+}
+
+
+footer {
+    height: 75px;
+    border-top: 1px solid #E5E5E5;
+    background-color: #F5F5F5;
+    color: #777777;
+    font-size: 9pt;
+    padding-top: 15px;
+}
+
+    footer div {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+
+    footer .wrapper {
+        padding: 15px;
+    }
+
+
+.ico-table {
+}
+
+#menu.affix {
+    top: 40px;
+}
+
+
+#menu {
+    margin: 15px 0 0;
+    padding: 0;
+    background-color: #444;
+}
+
+    #menu > li:first-child > a {
+    }
+
+    #menu > li > a {
+        display: block;
+        margin: 0;
+        padding: 8px 14px;
+        border-top: 1px solid #4E4E4E;
+        border-bottom: 1px solid #393939;
+        color: #AAAAAA !important;
+        font-size: 12pt;
+    }
+
+        #menu > li > a:hover {
+            background-color: #4A4A4A;
+            background-image: none;
+            color: #FFFFFF !important;
+        }
+
+.nav-list > li > a {
+    padding: 3px 15px;
+}
+
+.nav-list > li > a, .nav-list .nav-header {
+    margin-right: -15px;
+    margin-left: -15px;
+    -webkit-text-shadow: none !important;
+    text-shadow: none !important;
+}
+
+
+.nav > li > a {
+    display: block;
+}
+
+.sidebar-nav {
+}
+
+.container-fluid {
+    padding-right: 0 !important;
+}
+
+.navbar .nav > li > a:hover {
+    background-color: #4A4A4A;
+}
+
+input {
+    font-family: 'Scada', sans-serif;
+}
+
+.DDFooter input, .DDFooter label {
+    display: inline-block !important;
+}
+
+
+.DDDetailsTable {
+    width: 100%;
+    border: none !important;
+}
+
+    .DDDetailsTable .td {
+        border: none !important;
+        font-size: inherit !important;
+        font-family: 'Scada', sans-serif !important;
+    }
+
+.DDLightHeader {
+    vertical-align: top;
+    text-align: left;
+    background: none !important;
+}
+
+.page {
+    margin-top: 40px;
+    padding-right: 0px;
+}
+
+.DDFooter {
+    background-color: #EEEEEE;
+}
+
+.navbar-inverse .navbar-inner {
+    border-bottom: 1px solid #393939;
+    background-color: #444444;
+    background-image: none;
+}
+
+.navbar .nav > li > a {
+    border-right: 1px solid #000000;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid #ffffff;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+#menu [class^="icon-"], #menu [class*=" icon-"] {
+    background-image: url("/Images/glyphicons-halflings-white.png") !important;
+}
+
+    #menu [class^="icon-"]:hover, #menu [class*=" icon-"]:hover {
+        background-image: url("/Images/glyphicons-halflings-orange.png") !important;
+    }
+
+
+#menu i {
+    margin-right: 10px;
+}
+
+#main_form {
+    margin-bottom: 25px;
+    /*overflow: hidden;*/
+}
+
+.DDDetailsTable textarea {
+    padding: 3px !important;
+    min-width: 615px;
+}
+
+.DDDetailsTable input[type="text"],
+.DDDetailsTable input[type="password"],
+.DDDetailsTable input[type="datetime"],
+.DDDetailsTable input[type="datetime-local"],
+.DDDetailsTable input[type="date"],
+.DDDetailsTable input[type="month"],
+.DDDetailsTable input[type="time"],
+.DDDetailsTable input[type="week"],
+.DDDetailsTable input[type="number"],
+.DDDetailsTable input[type="email"],
+.DDDetailsTable input[type="url"],
+.DDDetailsTable input[type="search"],
+.DDDetailsTable input[type="tel"],
+.DDDetailsTable input[type="color"] {
+    padding: 4px;
+    min-width: 615px;
+}
+
+.DDDetailsTable input[type="date"] {
+    min-width: 215px;
+}
+
+.ajax__html_editor_extender_container {
+    padding: 3px !important;
+    min-width: 615px;
+    margin-bottom: 15px;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+    textarea.DDControl {
+        padding: 2px;
+        width: 602px;
+        border: 1px solid #DDDDDD;
+    }
+
+
+
+.top_nav {
+    height: 0;
+}
+
+select {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 0 0 0 !important;
+}
+
+.login {
+    margin-top: 150px;
+}
+
+    .login input[type="text"],
+    .login input[type="password"] {
+    }
+
+    .login label {
+        margin-right: 15px;
+    }
+
+    .login .btn {
+        margin-right: 5px;
+        width: 100px;
+    }
+
+.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.sidebar-nav .logo {
+    display: block;
+    margin: auto;
+    padding-top: 45px;
+}
+
+.collapsed {
+}
+
+.sidebar {
+    margin-top: 0;
+    margin-left: -25px;
+    border: 1px solid #333333;
+    border-top: none;
+    border-bottom: none;
+    background-color: #444444;
+}
+
+    .sidebar i {
+        margin-top: 3px;
+    }
+
+#server_information caption,
+#information caption {
+    text-align: left;
+}
+
+.logo-container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+th {
+    background: -moz-linear-gradient(center top, #FDFDFD 0%, #EAEAEA 100%);
+    background: linear-gradient(top, #FCFCFC 0%, #E9E9E9 100%);
+}
+
+
+.ajax__html_editor_extender_container input {
+    margin-top: 5px;
+}
+
+.ajax__html_editor_extender_container select {
+    margin-top: 5px;
+}
+
+.ajax__html_editor_extender_container span {
+    margin-top: 5px;
+}
+
+.backcolorclass {
+}
+
+    .backcolorclass input {
+        margin: 0;
+    }
+
+.forecolorclass {
+}
+
+    .forecolorclass input {
+        margin: 0;
+    }
+
+.startup {
+    border: 1px solid #CDCDCD;
+    margin: auto 10px auto auto;
+    overflow: hidden;
+}
+
+    .startup li {
+    }
+
+    .startup a {
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #CDCDCD;
+        display: block;
+        font-size: 12pt;
+        height: 30px;
+        padding-bottom: 5px !important;
+        padding-left: 55px;
+        padding-top: 14px !important;
+    }
+
+        .startup a:hover {
+        }
+
+        .startup a i {
+            display: inline-block;
+            margin-right: 5px !important;
+            margin-top: 3px;
+        }
+
+
+#log_list i {
+    cursor: pointer;
+}
+
+    #log_list i:hover {
+        color: #FD5814;
+    }
+
+.log {
+    display: none;
+}
+
+.table-bordered,
+.table-bordered thead:last-child tr:last-child > th:first-child, .table-bordered tbody:last-child tr:last-child > td:first-child, .table-bordered tbody:last-child tr:last-child > th:first-child, .table-bordered tfoot:last-child tr:last-child > td:first-child, .table-bordered tfoot:last-child tr:last-child > th:first-child,
+.table-bordered thead:first-child tr:first-child > th:first-child, .table-bordered tbody:first-child tr:first-child > td:first-child, .table-bordered tbody:first-child tr:first-child > th:first-child,
+.datepicker table tr td span {
+    border-radius: 0;
+}
+
+.break-word {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.system-btn {
+    font-weight: bold;
+    width: 200px;
+    font-size: 10pt;
+}
+
+input.system-btn {
+    width: 230px;
+}
+
+
+
+@media (max-width: 767px) {
+
+    .sidebar {
+        margin: auto;
+    }
+
+    .sidebar-nav {
+        margin-top: 0 !important;
+    }
+
+    .page {
+        margin-top: 0 !important;
+    }
+
+    header {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .content {
+        padding: 10px !important;
+    }
+
+    .brand {
+        font-size: 12pt !important;
+    }
+}
+
+@media (max-width: 979px) {
+    .sidebar {
+        margin-top: -40px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .DDDetailsTable textarea,
+    .DDDetailsTable input[type="date"],
+    .ajax__html_editor_extender_container,
+    .DDDetailsTable input[type="text"],
+    .DDDetailsTable input[type="password"],
+    .DDDetailsTable input[type="datetime"],
+    .DDDetailsTable input[type="datetime-local"],
+    .DDDetailsTable input[type="date"],
+    .DDDetailsTable input[type="month"],
+    .DDDetailsTable input[type="time"],
+    .DDDetailsTable input[type="week"],
+    .DDDetailsTable input[type="number"],
+    .DDDetailsTable input[type="email"],
+    .DDDetailsTable input[type="url"],
+    .DDDetailsTable input[type="search"],
+    .DDDetailsTable input[type="tel"],
+    .DDDetailsTable input[type="color"] {
+        padding: 3px;
+        min-width: 200px !important;
+        width: 200px !important;
+    }
+}
+
+.DDDetailsTable label {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+
+#prependedInput {
+    width: 400px;
+}
+
+#uploaded_image {
+    border: 1px solid #FD5814;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+#config {
+}
+
+
+.chzn-container-single .chzn-drop,
+.chzn-container-single .chzn-single,
+.chzn-container-multi .chzn-choices .search-choice,
+.chzn-container-active .chzn-single-with-drop {
+    border-radius: 0 !important;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+    margin: 20px 0;
+}
+
+    .right select {
+        height: 22px;
+        margin: 0;
+        text-align: center;
+        width: 70px;
+    }
+
+    .right span {
+        padding-bottom: 3px !important;
+        padding-top: 3px !important;
+    }
+
+.page-list {
+}
+
+.page-counter {
+    height: 20px;
+    overflow: hidden;
+    padding: 0;
+}
+
+    .page-counter input {
+        border: medium none;
+        font-weight: bold;
+        height: auto;
+        margin: 0 !important;
+        padding: 0;
+        text-align: center;
+        width: 30px;
+    }
+
+td, .td {
+    vertical-align: top;
+}
+
+.cke_top {
+    background: #EEE !important;
+}
+
+.cke_bottom {
+    background: #EEE !important;
+}
+
+.datepicker td, .datepicker th,
+.cke_toolgroup, .cke_combo_button {
+    border-radius: 0 !important;
+}
+
+.DDTextBox {
+    font-family: 'Scada', sans-serif !important;
+}
+
+.cke_reset_all, .cke_reset_all * {
+    font-family: 'Scada', sans-serif !important;
+    border-radius: 0 !important;
+}
+
+.cke_button {
+    border-color: #000000 #000000 #B3B3B3 !important;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3 !important;
+    cursor: pointer !important;
+}
+
+
+.cke_dialog_ui_button_ok {
+    background-image: linear-gradient(to bottom, #0088CC, #0044CC) !important;
+    border-color: #000000 #000000 #000000 !important;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;
+    border-radius: 0 0 0 0 !important;
+    color: #FFFFFF !important;
+    min-width: 85px;
+    -webkit-text-shadow: none !important;
+    text-shadow: none !important;
+}
+
+.datepicker th {
+    background: none;
+}
+
+.chzn-container-single .chzn-single span,
+.chzn-container .chzn-results .active-result,
+div.DDBottomHyperLink {
+    font: 1em Scada,Sans-Serif !important;
+}
+
+.load-progress {
+    float: right;
+}
+
+.DD {
+    padding: 0;
+}
+
+.chzn-single span {
+    padding-top: 2px;
+}
+
+.select {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+    .select input {
+        display: block;
+        margin: 0;
+    }
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    min-width: 150px;
+    font-family: 'Scada',sans-serif !important;
+}
+
+.grid-view {
+}
+
+.select_all {
+}
+
+
+.DDFilter {
+    color: #666666;
+    font-family: 'Scada',sans-serif !important;
+    font-size: 10pt;
+}
+
+.chzn-search input[type="text"] {
+    min-width: 200px;
+}

@@ -75,7 +75,8 @@
     <footer class="row-fluid">
         <div class="span12">
             Data Management System &copy; <%=DateTime.Now.Year %><br />
-            Powered by ASP.NET Dynamic Data. <%--| <a href="#">Technology stack</a>--%>
+            Open source project | Fork it on <a href="https://github.com/ernado-x/X.DynamicData">GitHub</a><br />
+            Powered by ASP.NET Dynamic Data. | Information <a href="http://andrew.gubskiy.com/publication/item/data-management-system">for developers</a> (rus)
         </div>
     </footer>
 

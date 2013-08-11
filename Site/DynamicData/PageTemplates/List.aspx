@@ -83,6 +83,7 @@
     <script type="text/javascript">
         function pageLoad(sender, args) {
             intializeGridViewSelectAllCheckbox();
+            updateSidebarHeight();
         }
     </script>
 

@@ -39,7 +39,7 @@
                         <img class="logo" src="/Images/logo.png" />
                     </div>
                     <ul id="menu" class="nav nav-list" runat="server" clientidmode="Static">
-                    </ul>
+                    </ul>                    
                 </section>
             </div>
 

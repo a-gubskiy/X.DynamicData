@@ -925,6 +925,8 @@
     </Content>
     <Content Include="DynamicData\web.config" />
     <None Include="Properties\PublishProfiles\Default.pubxml" />
+    <None Include="Properties\PublishProfiles\onestarlifemanage - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\onestarlifemanage - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

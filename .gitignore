@@ -2,6 +2,8 @@
 [Bb]in/
 [Oo]bj/
 
+*.pubxml
+
 web.config
 
 # mstest test results

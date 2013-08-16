@@ -113,6 +113,11 @@ namespace X.DynamicData.Core
 
         public static ObjectContext CreateDataContext(string path)
         {
+            if (path.Contains("~/"))
+            {
+                path = HttpContext.Current.Server.MapPath(path);
+            }
+
             var types = GetTypes(path);
 
             var dataContextType = (from o in types

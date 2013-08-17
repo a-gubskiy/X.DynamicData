@@ -18,12 +18,14 @@ namespace Site
                 Response.Redirect("~/System/Login.aspx");
             }
 
+            brand.InnerText = Global.Context.Title;
+            sidebar.Visible = WebSecurity.IsAuthenticated;
+
             if (WebSecurity.IsAuthenticated)
             {
                 menu.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetAllLinks()
                                                             select String.Format("<li><a href=\"{0}\"><i class=\"{1}\"></i>{2}</a></li>", o.Url, o.Icon, o.Title)).ToArray());
 
-                brand.InnerText = Global.Context.Title;
                 site_link.HRef = Global.Context.WebsiteUrl;
             }
 

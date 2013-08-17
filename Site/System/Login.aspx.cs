@@ -15,7 +15,7 @@ namespace Site
             login_control.LoginButtonText = Resources.Global.LoginButtonText;
             login_control.PasswordLabelText = Resources.Global.Password;
             login_control.UserNameLabelText = Resources.Global.Login;
-        
+            login_control.TitleText = Resources.Global.LoginPageTitle;
 
             if (!String.IsNullOrEmpty(Request["logout"]))
             {
@@ -27,7 +27,7 @@ namespace Site
         protected void LoginControlAuthenticate(object sender, AuthenticateEventArgs e)
         {
             e.Authenticated = WebSecurity.Login(login_control.UserName, login_control.Password);
-            
+
             if (e.Authenticated)
             {
                 FormsAuthentication.RedirectFromLoginPage(login_control.UserName, false);

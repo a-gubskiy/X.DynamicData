@@ -34,7 +34,7 @@
     <div class="container-fluid page">
         <div class="row-fluid">
             <div class="span2">
-                <section class="sidebar-nav sidebar">
+                <section class="sidebar-nav sidebar" runat="server" id="sidebar">
                     <div class="logo-container">
                         <h4>Data Management System</h4>
                         <strong>Version:</strong> <%=X.DynamicData.Core.Global.Context.Verison %>

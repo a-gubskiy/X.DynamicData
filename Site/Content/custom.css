@@ -356,7 +356,6 @@ select {
 
 .logo-container {
     border: 1px solid #CCCCCC;
-    border-bottom: none;
     color: #777777;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -742,4 +741,12 @@ label {
     padding: 10px !important;
     text-align: center;
     width: 80px;
+}
+
+
+.login-title {
+    color: #FD5814;
+    font-size: 20px;
+    padding-bottom: 25px;
+    padding-left: 55px;
 }

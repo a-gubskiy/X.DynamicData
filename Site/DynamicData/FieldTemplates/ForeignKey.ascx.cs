@@ -12,7 +12,7 @@ namespace Site
     {
         public string NavigateUrl { get; set; }
 
-        public bool AllowNavigation { get; set; }
+        //public bool AllowNavigation { get; set; }
 
         private string GetDisplayString()
         {
@@ -28,10 +28,10 @@ namespace Site
 
         private string GetNavigateUrl()
         {
-            if (!AllowNavigation)
-            {
-                return null;
-            }
+            //if (!AllowNavigation)
+            //{
+            //    return null;
+            //}
 
             if (String.IsNullOrEmpty(NavigateUrl))
             {

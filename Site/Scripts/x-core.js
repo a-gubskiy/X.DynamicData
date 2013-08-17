@@ -16,28 +16,6 @@ $(document).ready(function () {
     }
 });
 
-$(window).resize(function () {
-    updateSidebarHeight();
-});
-
-function updateSidebarHeight() {
-    var height = $(window).height() > $("body").height()
-        ? $(window).height()
-        : $("body").height();
-
-    height = height - $("header").height() - $("footer").height() + 25;
-
-    if (height > $('.sidebar').height()) {
-        $('.sidebar').height(height);
-    }
-
-    if ($("body").width() < 767) {
-        $('.sidebar').css("height", "auto");
-    }
-}
-
-$(window).resize();
-
 function positionFooter() {
     var mFoo = $("footer");
 

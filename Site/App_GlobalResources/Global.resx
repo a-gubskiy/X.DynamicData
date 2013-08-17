@@ -273,4 +273,10 @@
   <data name="Update" xml:space="preserve">
     <value>Update</value>
   </data>
+  <data name="ViewChildRecords" xml:space="preserve">
+    <value>Child records</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
 </root>

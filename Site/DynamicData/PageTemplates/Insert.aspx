@@ -7,7 +7,7 @@
         </DataControls>
     </asp:DynamicDataManager>
 
-    <h1 class="DDSubHeader"><%=Resources.Global.InsertPageTitle %> "<%= _table.DisplayName %>"</h1>
+    <h1><%=Resources.Global.InsertPageTitle %> "<%= _table.DisplayName %>"</h1>
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>

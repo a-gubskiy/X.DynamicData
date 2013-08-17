@@ -33,17 +33,19 @@
 
     <div class="container-fluid page">
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span2">
                 <section class="sidebar-nav sidebar">
                     <div class="logo-container">
-                        <img class="logo" src="/Images/logo.png" />
+                        <h4>Data Management System</h4>
+                        <strong>Version:</strong> <%=X.DynamicData.Core.Global.Context.Verison %>
+                        <%--<img class="logo" src="/Images/logo.png" />--%>
                     </div>
-                    <ul id="menu" class="nav nav-list" runat="server" clientidmode="Static">
+                    <ul id="menu" class="nav nav-list menu" runat="server" clientidmode="Static">
                     </ul>                    
                 </section>
             </div>
 
-            <section class="span9 content">
+            <section class="span10 content">
                 <form id="main_form" runat="server">
 
                     <asp:ScriptManager ID="script_manager" runat="server" EnablePartialRendering="True">
@@ -75,8 +77,7 @@
     <footer class="row-fluid">
         <div class="span12">
             Data Management System &copy; <%=DateTime.Now.Year %><br />
-            Open source project | Fork it on <a href="https://github.com/ernado-x/X.DynamicData">GitHub</a><br />
-            Powered by ASP.NET Dynamic Data. | Information <a href="http://andrew.gubskiy.com/publication/item/data-management-system">for developers</a> (rus)
+            Open source project | Fork it on <a href="https://github.com/ernado-x/X.DynamicData">GitHub</a> | Information <a href="http://andrew.gubskiy.com/publication/item/data-management-system">for developers</a> (rus) | Powered by ASP.NET Dynamic Data
         </div>
     </footer>
 

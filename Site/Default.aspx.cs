@@ -13,7 +13,7 @@ namespace Site
 
             if (Global.Context != null)
             {
-                startup_menu.InnerHtml = Navigator.Render();
+                startup_menu.InnerHtml = Navigator.Render(true);
             }
 
             if (!Global.CanCreateDataContext())

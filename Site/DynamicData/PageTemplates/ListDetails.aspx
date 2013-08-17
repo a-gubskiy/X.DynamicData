@@ -10,7 +10,7 @@
         </DataControls>
     </asp:DynamicDataManager>
 
-    <h1 class="DDSubHeader"><%= _table.DisplayName %></h1>
+    <h1><%= _table.DisplayName %></h1>
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>

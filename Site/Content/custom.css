@@ -4,6 +4,11 @@ html, body {
     font-family: 'Scada', sans-serif;
 }
 
+body {
+    background: url("/images/bg.png") repeat scroll 0 0 transparent;
+    padding: 0 !important;
+}
+
 h1, h2, h3 {
     color: #FD5814;
     font-weight: normal;
@@ -26,6 +31,10 @@ a {
     .btn-primary:hover, table.DDDetailsTable a:hover {
         text-decoration: none !important;
     }
+
+table.DDDetailsTable {
+    background-color: transparent !important;
+}
 
 .btn {
     padding-right: 15px !important;
@@ -51,8 +60,6 @@ header {
     background-image: url("/images/glyphicons-halflings.png");
 }
 
-#startup_menu {
-}
 
 .content {
     margin-top: 15px;
@@ -86,65 +93,79 @@ div.DDBottomHyperLink a:hover {
 
 
 footer {
-    height: 75px;
-    border-top: 1px solid #E5E5E5;
-    background-color: #F5F5F5;
-    color: #777777;
+    background-color: #444444;
+    border-top: 3px solid #FD5814;
+    color: #EEEEEE;
     font-size: 9pt;
     padding-top: 15px;
+    margin-top: 25px;
 }
 
+    footer a {
+        color: #AAAAAA !important;
+    }
+
+        footer a:hover {
+        }
+
     footer div {
-        padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 15px;
+        padding-left: 15px;
     }
 
     footer .wrapper {
         padding: 15px;
     }
 
-
 .ico-table {
 }
 
-#menu.affix {
-    top: 40px;
-}
-
-
-#menu {
-    margin: 15px 0 0;
+.menu {
+    margin: 0;
     padding: 0;
-    background-color: #444;
 }
 
-    #menu > li:first-child > a {
+    .menu.affix {
+        top: 40px;
     }
 
-    #menu > li > a {
+    .menu > li:first-child > a {
+        border-top: 1px solid #CCC;
+    }
+
+    .menu > li > a {
+        background: -moz-linear-gradient(center top, #FAFAFA 0%, #EEEEEE 100%) repeat scroll 0 0 transparent;
+        border-color: #FDFDFD #CCCCCC #CCCCCC;
+        border-style: solid;
+        border-width: 1px;
+        color: #5F5F5F;
         display: block;
+        font-size: 10pt;
         margin: 0;
         padding: 8px 14px;
-        border-top: 1px solid #4E4E4E;
-        border-bottom: 1px solid #393939;
-        color: #AAAAAA !important;
-        font-size: 12pt;
     }
 
-        #menu > li > a:hover {
-            background-color: #4A4A4A;
-            background-image: none;
-            color: #FFFFFF !important;
+        .menu > li > a:hover {
+            border-left: 3px solid;
+            padding-left: 13px;
         }
 
+    .menu i {
+        display: inline-block;
+        margin-right: 8px !important;
+        margin-top: 1px !important;
+    }
+
+.table th, .table td {
+    border-color: #CCC;
+}
+
 .nav-list > li > a {
-    padding: 3px 15px;
+    padding: 8px 15px;
 }
 
 .nav-list > li > a, .nav-list .nav-header {
-    margin-right: -15px;
-    margin-left: -15px;
     -webkit-text-shadow: none !important;
     text-shadow: none !important;
 }
@@ -186,9 +207,9 @@ input {
     }
 
 .DDLightHeader {
+    background: none !important;
     vertical-align: top;
     text-align: left;
-    background: none !important;
 }
 
 .page {
@@ -214,22 +235,23 @@ input {
 }
 
 
-#menu [class^="icon-"], #menu [class*=" icon-"] {
-    background-image: url("/Images/glyphicons-halflings-white.png") !important;
+.menu [class^="icon-"], .menu [class*=" icon-"] {
 }
 
-    #menu [class^="icon-"]:hover, #menu [class*=" icon-"]:hover {
-        background-image: url("/Images/glyphicons-halflings-orange.png") !important;
-    }
 
-
-#menu i {
-    margin-right: 10px;
+a:hover [class^="icon-"], a:hover [class*=" icon-"] {
+    background-image: url("/Images/glyphicons-halflings-orange.png") !important;
 }
+
+.btn [class^="icon-"] {
+    margin-top: 2px;
+}
+
+
+
 
 #main_form {
     margin-bottom: 25px;
-    /*overflow: hidden;*/
 }
 
 .DDDetailsTable textarea {
@@ -260,9 +282,9 @@ input {
 }
 
 .ajax__html_editor_extender_container {
+    margin-bottom: 15px;
     padding: 3px !important;
     min-width: 615px;
-    margin-bottom: 15px;
 }
 
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
@@ -322,16 +344,12 @@ select {
 }
 
 .sidebar {
-    margin-top: 0;
-    margin-left: -25px;
-    border: 1px solid #333333;
-    border-top: none;
-    border-bottom: none;
-    background-color: #444444;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
     .sidebar i {
-        margin-top: 3px;
+        margin-top: 1px;
     }
 
 #server_information caption,
@@ -340,8 +358,12 @@ select {
 }
 
 .logo-container {
-    padding-right: 15px;
+    border: 1px solid #CCCCCC;
+    border-bottom: none;
+    color: #777777;
+    padding-bottom: 10px;
     padding-left: 15px;
+    padding-top: 10px;
 }
 
 th {
@@ -377,33 +399,29 @@ th {
     }
 
 .startup {
-    border: 1px solid #CDCDCD;
-    margin: auto 10px auto auto;
     overflow: hidden;
+    margin: auto 10px auto auto;
+    border: 1px solid #CDCDCD;
 }
 
     .startup li {
     }
 
     .startup a {
-        background-color: #FFFFFF;
-        border-bottom: 1px solid #CDCDCD;
         display: block;
-        font-size: 12pt;
-        height: 30px;
+        padding-top: 14px !important;
         padding-bottom: 5px !important;
         padding-left: 55px;
-        padding-top: 14px !important;
+        height: 30px;
+        border-bottom: 1px solid #CDCDCD;
+        background-color: #FFFFFF;
+        font-size: 12pt;
     }
 
         .startup a:hover {
         }
 
-        .startup a i {
-            display: inline-block;
-            margin-right: 5px !important;
-            margin-top: 3px;
-        }
+
 
 
 #log_list i {
@@ -431,8 +449,8 @@ th {
 }
 
 .system-btn {
-    font-weight: bold;
     width: 200px;
+    font-weight: bold;
     font-size: 10pt;
 }
 
@@ -513,9 +531,9 @@ input.system-btn {
 }
 
 #uploaded_image {
-    border: 1px solid #FD5814;
     margin-top: 10px;
     padding: 3px;
+    border: 1px solid #FD5814;
 }
 
 #config {
@@ -539,34 +557,34 @@ input.system-btn {
 }
 
     .right select {
-        height: 22px;
         margin: 0;
-        text-align: center;
         width: 70px;
+        height: 22px;
+        text-align: center;
     }
 
     .right span {
-        padding-bottom: 3px !important;
         padding-top: 3px !important;
+        padding-bottom: 3px !important;
     }
 
 .page-list {
 }
 
 .page-counter {
-    height: 20px;
     overflow: hidden;
     padding: 0;
+    height: 20px;
 }
 
     .page-counter input {
-        border: medium none;
-        font-weight: bold;
-        height: auto;
         margin: 0 !important;
         padding: 0;
-        text-align: center;
         width: 30px;
+        height: auto;
+        border: medium none;
+        text-align: center;
+        font-weight: bold;
     }
 
 td, .td {
@@ -591,8 +609,8 @@ td, .td {
 }
 
 .cke_reset_all, .cke_reset_all * {
-    font-family: 'Scada', sans-serif !important;
     border-radius: 0 !important;
+    font-family: 'Scada', sans-serif !important;
 }
 
 .cke_button {
@@ -603,12 +621,12 @@ td, .td {
 
 
 .cke_dialog_ui_button_ok {
-    background-image: linear-gradient(to bottom, #0088CC, #0044CC) !important;
+    min-width: 85px;
     border-color: #000000 #000000 #000000 !important;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;
     border-radius: 0 0 0 0 !important;
+    background-image: linear-gradient(to bottom, #0088CC, #0044CC) !important;
     color: #FFFFFF !important;
-    min-width: 85px;
     -webkit-text-shadow: none !important;
     text-shadow: none !important;
 }
@@ -653,7 +671,13 @@ label {
 }
 
 .grid-view {
+    background-color: #FDFDFD;
 }
+
+    .grid-view .btn {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
 
 .select_all {
 }
@@ -661,10 +685,52 @@ label {
 
 .DDFilter {
     color: #666666;
-    font-family: 'Scada',sans-serif !important;
     font-size: 10pt;
+    font-family: 'Scada',sans-serif !important;
 }
 
 .chzn-search input[type="text"] {
     min-width: 200px;
+}
+
+.alert {
+    border-radius: 0px !important;
+}
+
+.btn-danger {
+    color: #EEEEEE !important;
+}
+
+.widget {
+    border: 1px solid #CCCCCC;
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+
+.widget-title {
+    background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
+    border-bottom: 1px solid #CCCCCC;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    color: #999999;
+    font-weight: bold;
+    padding: 7px 10px;
+}
+
+.widget-body {
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+#startup_menu a {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#startup_menu li {
+    display: inline-block;
 }

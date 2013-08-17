@@ -7,7 +7,7 @@
         </DataControls>
     </asp:DynamicDataManager>
 
-    <h1 class="DDSubHeader">Entry from table <%= _table.DisplayName %></h1>
+    <h1>Entry from table <%= _table.DisplayName %></h1>
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
@@ -22,7 +22,7 @@
                         <tr class="td">
                             <td colspan="2">
                                 <asp:DynamicHyperLink runat="server" Action="Edit" CssClass="btn btn-primary" Text="Редкатировать" />
-                                <asp:LinkButton runat="server" CommandName="Delete" CssClass="btn btn-primary" Text="Удалить" OnClientClick='return confirm("Are you sure you want to delete this item?");' />
+                                <asp:LinkButton runat="server" CommandName="Delete" CssClass="btn btn-danger" Text="Удалить" OnClientClick='return confirm("Are you sure you want to delete this item?");' />
                             </td>
                         </tr>
                     </table>

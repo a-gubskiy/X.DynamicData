@@ -21,13 +21,14 @@ namespace X.DynamicData.Core
             CustomLinks = new Dictionary<string, string>();
         }
 
-
-
-        public static string Render()
+        public static string Render(bool mainMenu = false)
         {
             var sb = new StringBuilder();
 
-            sb.AppendFormat(RenderLink("/", "icon-home", Global.GetText("HomePageTitle")));
+            if (!mainMenu)
+            {
+                sb.AppendFormat(RenderLink("/", "icon-home", Global.GetText("HomePageTitle")));
+            }
 
             sb.AppendFormat(RenderLink("/System/manage.aspx", "icon-cog", Global.GetText("ManagePageTitle")));
 
@@ -66,13 +67,18 @@ namespace X.DynamicData.Core
             return sb.ToString();
         }
 
-        private static string RenderLink(string url, string @class, string title)
+        private static string RenderLink(string url, string @class, string title, bool renderLi = true)
         {
             var virtualUrl = "~" + url;
 
             if (UrlAuthorizationModule.CheckUrlAccessForPrincipal(virtualUrl, HttpContext.Current.User, "GET"))
             {
-                return String.Format("<li><a href=\"{0}\"><i class=\"{1}\"></i>{2}</a></li>", url, @class, title);
+                if (renderLi)
+                {
+                    return String.Format("<li><a href=\"{0}\"><i class=\"{1}\"></i>{2}</a></li>", url, @class, title);
+                }
+                
+                return String.Format("<a href=\"{0}\"><i class=\"{1}\"></i>{2}</a>", url, @class, title);
             }
 
             return String.Empty;

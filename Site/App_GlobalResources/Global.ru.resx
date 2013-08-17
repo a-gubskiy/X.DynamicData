@@ -205,7 +205,7 @@
     <value>Записей на странице:</value>
   </data>
   <data name="RemoveSelected" xml:space="preserve">
-    <value>Уадалить выбранные записи</value>
+    <value>Удалить выбранные записи</value>
   </data>
   <data name="RestartWebApplication" xml:space="preserve">
     <value>Перезапуск сайта</value>
@@ -259,7 +259,7 @@
     <value>Строка подключения к хранилищу веб-приложения</value>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
-    <value>Добро пожаловать в систему упраления данным</value>
+    <value>Добро пожаловать в систему упраления данными</value>
   </data>
   <data name="YouLoginAs" xml:space="preserve">
     <value>Вы вошли как</value>
@@ -272,5 +272,11 @@
   </data>
   <data name="Update" xml:space="preserve">
     <value>Обновить</value>
+  </data>
+  <data name="ViewChildRecords" xml:space="preserve">
+    <value>Просмотреть записи</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Статус</value>
   </data>
 </root>

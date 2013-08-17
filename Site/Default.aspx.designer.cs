@@ -22,12 +22,39 @@ namespace Site {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl login_title;
         
         /// <summary>
-        /// startup_menu control.
+        /// table_links control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl startup_menu;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl table_links;
+        
+        /// <summary>
+        /// plugin_widget control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl plugin_widget;
+        
+        /// <summary>
+        /// custom_links control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl custom_links;
+        
+        /// <summary>
+        /// system_links control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl system_links;
     }
 }

@@ -42,9 +42,6 @@ table.DDDetailsTable {
     border-radius: 0 0 0 0 !important;
 }
 
-body {
-    padding: 0 !important;
-}
 
 header {
     border-top: 3px solid #FD5814;
@@ -733,4 +730,16 @@ label {
 
 #startup_menu li {
     display: inline-block;
+}
+
+
+
+.square {
+    font-size: 9pt;
+    height: 55px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    padding: 10px !important;
+    text-align: center;
+    width: 80px;
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using WebMatrix.WebData;
 using X.DynamicData.Core;
@@ -13,7 +14,16 @@ namespace Site
 
             if (Global.Context != null)
             {
-                startup_menu.InnerHtml = Navigator.Render(true);
+                table_links.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetEntitiesLinks()
+                                                                   select String.Format("<a class=\"btn square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
+
+                custom_links.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetCustomLinks()
+                                                                    select String.Format("<a class=\"btn square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
+
+                system_links.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetSystemLinks()
+                                                                    select String.Format("<a class=\"btn square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
+
+                plugin_widget.Visible = Navigator.GetCustomLinks().Count() > 0;
             }
 
             if (!Global.CanCreateDataContext())
@@ -27,7 +37,7 @@ namespace Site
             }
 
 
-            login_title.InnerHtml = String.Format("{0}: <i>{1}</i>. {2}: <i>{3}</i>",
+            login_title.InnerHtml = String.Format("{0}: <strong>{1}</strong>.<br />{2}:<strong>{3}</strong>.",
                 Resources.Global.YouWorkWithProject, Global.Context.Title, Resources.Global.YouLoginAs, WebSecurity.CurrentUserName);
         }
     }

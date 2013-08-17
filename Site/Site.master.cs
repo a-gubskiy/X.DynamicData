@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using WebMatrix.WebData;
@@ -19,7 +20,9 @@ namespace Site
 
             if (WebSecurity.IsAuthenticated)
             {
-                menu.InnerHtml = Navigator.Render();
+                menu.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetAllLinks()
+                                                            select String.Format("<li><a href=\"{0}\"><i class=\"{1}\"></i>{2}</a></li>", o.Url, o.Icon, o.Title)).ToArray());
+
                 brand.InnerText = Global.Context.Title;
                 site_link.HRef = Global.Context.WebsiteUrl;
             }
@@ -63,7 +66,7 @@ namespace Site
         private static string RenderMessage(string caption, string text, string @class)
         {
             var sb = new StringBuilder();
-            
+
             sb.AppendFormat("<div class=\"alert {0}\">", @class);
             sb.AppendLine("<button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>");
             sb.AppendFormat("<strong>{0}</strong>&nbsp;<span>{1}</span>", caption, text);

@@ -106,6 +106,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Plugins.
+        /// </summary>
+        internal static string CustomLinks {
+            get {
+                return ResourceManager.GetString("CustomLinks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Database.
         /// </summary>
         internal static string Database {
@@ -421,6 +430,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System commands.
+        /// </summary>
+        internal static string SystemLinks {
+            get {
+                return ResourceManager.GetString("SystemLinks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SystemLogDescription.
         /// </summary>
         internal static string SystemLogDescription {
@@ -435,6 +453,15 @@ namespace Resources {
         internal static string SystemWorkInDebugMode {
             get {
                 return ResourceManager.GetString("SystemWorkInDebugMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entities.
+        /// </summary>
+        internal static string TableLinks {
+            get {
+                return ResourceManager.GetString("TableLinks", resourceCulture);
             }
         }
         

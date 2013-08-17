@@ -279,4 +279,13 @@
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="CustomLinks" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="SystemLinks" xml:space="preserve">
+    <value>System commands</value>
+  </data>
+  <data name="TableLinks" xml:space="preserve">
+    <value>Entities</value>
+  </data>
 </root>

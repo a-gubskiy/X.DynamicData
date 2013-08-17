@@ -18,11 +18,25 @@
 
     <div class="widget">
         <div class="widget-title">
-            <%=Resources.Global.Status %>
+            <%=Resources.Global.TableLinks %>
         </div>
-        <div class="widget-body">            
-                <ul id="startup_menu" class="nav menu" runat="server" clientidmode="Static">
-                </ul>            
+        <div class="widget-body" id="table_links" runat="server" clientidmode="Static">
+        </div>
+    </div>
+
+    <div class="widget" id="plugin_widget" runat="server">
+        <div class="widget-title">
+            <%=Resources.Global.CustomLinks %>
+        </div>
+        <div class="widget-body" id="custom_links" runat="server" clientidmode="Static">
+        </div>
+    </div>
+
+    <div class="widget">
+        <div class="widget-title">
+            <%=Resources.Global.SystemLinks %>
+        </div>
+        <div class="widget-body" id="system_links" runat="server" clientidmode="Static">
         </div>
     </div>
 

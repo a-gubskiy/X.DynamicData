@@ -163,7 +163,7 @@
     <value>Здесь вы можете загрузить на сервер необходимые файлы.</value>
   </data>
   <data name="FileUploadPageTitle" xml:space="preserve">
-    <value>Загрузить</value>
+    <value>Загрузка файлов</value>
   </data>
   <data name="HomePageTitle" xml:space="preserve">
     <value>Главная</value>
@@ -278,5 +278,14 @@
   </data>
   <data name="Status" xml:space="preserve">
     <value>Статус</value>
+  </data>
+  <data name="CustomLinks" xml:space="preserve">
+    <value>Плагины</value>
+  </data>
+  <data name="SystemLinks" xml:space="preserve">
+    <value>Системные команды</value>
+  </data>
+  <data name="TableLinks" xml:space="preserve">
+    <value>Данные</value>
   </data>
 </root>

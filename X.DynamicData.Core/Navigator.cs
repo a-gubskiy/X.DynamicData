@@ -25,7 +25,7 @@ namespace X.DynamicData.Core
         {
             var list = new List<Link>();
 
-            AddLinkToList(list, "/", "icon-home", Global.GetText("HomePageTitle"));
+            AddLinkToList(list, "/", "glyphicon glyphicon -home", Global.GetText("HomePageTitle"));
 
 
             list.AddRange(GetCustomLinks());
@@ -50,7 +50,7 @@ namespace X.DynamicData.Core
                 foreach (var table in items)
                 {
                     var url = String.Format("/{0}/List.aspx", table.Name);
-                    AddLinkToList(list, url, "icon-list-alt", table.DisplayName);
+                    AddLinkToList(list, url, "glyphicon glyphicon-list-alt", table.DisplayName);
 
                 }
             }
@@ -62,17 +62,17 @@ namespace X.DynamicData.Core
         {
             var list = new List<Link>();
 
-            AddLinkToList(list, "/System/manage.aspx", "icon-cog", Global.GetText("ManagePageTitle"));
+            AddLinkToList(list, "/System/manage.aspx", "glyphicon glyphicon-cog", Global.GetText("ManagePageTitle"));
 
             if (Global.Context.ShowLogsInMenu)
             {
-                AddLinkToList(list, "/System/logs.aspx", "icon-book", "Системные логи");
+                AddLinkToList(list, "/System/logs.aspx", "glyphicon glyphicon-book", "Системные логи");
             }
 
-            AddLinkToList(list, "/System/FileUpload.aspx", "icon-upload", Global.GetText("FileUploadPageTitle"));
-            AddLinkToList(list, "/System/systeminformation.aspx", "icon-info-sign", Global.GetText("SystemInformationPageTite"));
-            AddLinkToList(list, "/System/serverinformation.aspx", "icon-hdd", Global.GetText("ServerInformationPageTite"));
-            AddLinkToList(list, "/System/login.aspx?logout=true", "icon-share", Global.GetText("Logout"));
+            AddLinkToList(list, "/System/FileUpload.aspx", "glyphicon glyphicon-upload", Global.GetText("FileUploadPageTitle"));
+            AddLinkToList(list, "/System/systeminformation.aspx", "glyphicon glyphicon-info-sign", Global.GetText("SystemInformationPageTite"));
+            AddLinkToList(list, "/System/serverinformation.aspx", "glyphicon glyphicon-hdd", Global.GetText("ServerInformationPageTite"));
+            AddLinkToList(list, "/System/login.aspx?logout=true", "glyphicon glyphicon-share", Global.GetText("Logout"));
 
             return list;
         }
@@ -98,23 +98,6 @@ namespace X.DynamicData.Core
                 var link = new Link(url, @class, title);
                 list.Add(link);
             }
-        }
-
-        //private static string RenderLink(string url, string @class, string title, bool renderLi = true)
-        //{
-        //    var virtualUrl = "~" + url;
-
-        //    if (UrlAuthorizationModule.CheckUrlAccessForPrincipal(virtualUrl, HttpContext.Current.User, "GET"))
-        //    {
-        //        if (renderLi)
-        //        {
-        //            return String.Format("<li><a href=\"{0}\"><i class=\"{1}\"></i>{2}</a></li>", url, @class, title);
-        //        }
-
-        //        return String.Format("<a href=\"{0}\"><i class=\"{1}\"></i>{2}</a>", url, @class, title);
-        //    }
-
-        //    return String.Empty;
-        //}
+        }    
     }
 }

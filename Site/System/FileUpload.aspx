@@ -10,7 +10,7 @@
     <div id="result" runat="server" clientidmode="Static" Visible="False">
         <div class="input-prepend">
             <span class="add-on">Ссылка на файл</span>
-            <input class="span4" runat="server" ClientIDMode="Static" id="prependedInput" type="text" placeholder="Url" />
+            <input class="col-md-4" runat="server" ClientIDMode="Static" id="prependedInput" type="text" placeholder="Url" />
             <br />
             <img src="" width="400" runat="server" Visible="False" clientidmode="Static" id="uploaded_image"/>
         </div>

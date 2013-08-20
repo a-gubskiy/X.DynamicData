@@ -15,13 +15,13 @@ namespace Site
             if (Global.Context != null)
             {
                 table_links.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetEntitiesLinks()
-                                                                   select String.Format("<a class=\"btn square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
+                                                                   select String.Format("<a class=\"btn btn-default square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
 
                 custom_links.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetCustomLinks()
-                                                                    select String.Format("<a class=\"btn square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
+                                                                    select String.Format("<a class=\"btn btn-default square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
 
                 system_links.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetSystemLinks()
-                                                                    select String.Format("<a class=\"btn square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
+                                                                    select String.Format("<a class=\"btn btn-default square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
 
                 plugin_widget.Visible = Navigator.GetCustomLinks().Any();
             }

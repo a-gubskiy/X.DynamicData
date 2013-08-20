@@ -570,7 +570,7 @@ input.system-btn {
 .page-counter {
     overflow: hidden;
     padding: 0;
-    height: 20px;
+    height: 34px;
 }
 
     .page-counter input {
@@ -735,12 +735,19 @@ label {
 
 .square {
     font-size: 9pt;
-    height: 55px;
+    height: 80px;
     margin-bottom: 15px;
     margin-right: 15px;
     padding: 10px !important;
     text-align: center;
-    width: 80px;
+    width: 100px;
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    -ms-word-wrap: break-word;
+    word-wrap: break-word; /* IE */
+    padding-top: 15px;
 }
 
 

@@ -1,8 +1,9 @@
 ﻿<%@ Master Language="C#" CodeBehind="Site.master.cs" Inherits="Site.SiteMasterPage" %>
+
 <%@ Import Namespace="System.Web.Optimization" %>
 <!doctype html>
 <html>
-<head ID="page_head" runat="server">
+<head id="page_head" runat="server">
     <title>Data Management System</title>
     <link href='http://fonts.googleapis.com/css?family=Scada:400italic,700italic,400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <%= Styles.Render("~/Content/css") %>
@@ -11,29 +12,27 @@
 <body>
 
     <header class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar collapsed" type="button">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="brand" id="brand" runat="server" clientidmode="Static">Data Management System</a>
-                <div class="nav-collapse collapse" id="top_nav" clientidmode="Static" runat="server">
-                    <ul class="nav navbar-text pull-right">
-                        <li><a target="new" runat="server" id="site_link" href="#"><%=Resources.Global.WebApplicationLink %></a></li>
-                        <li><a href="/System/systeminformation.aspx"><%=Resources.Global.SystemInformationPageTite %></a></li>
-                        <li><a href="/System/serverInformation.aspx"><%=Resources.Global.ServerInformationPageTite %></a></li>
-                        <li><a href="/System/login.aspx?logout=true"><%=Resources.Global.Logout %></a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand" id="brand" runat="server" clientidmode="Static">Data Management System</a>
         </div>
+        <div class="navbar-collapse collapse" id="top_nav" clientidmode="Static" runat="server">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a target="new" runat="server" id="site_link" href="#"><%=Resources.Global.WebApplicationLink %></a></li>
+                <li><a href="/System/systeminformation.aspx"><%=Resources.Global.SystemInformationPageTite %></a></li>
+                <li><a href="/System/serverInformation.aspx"><%=Resources.Global.ServerInformationPageTite %></a></li>
+                <li><a href="/System/login.aspx?logout=true"><%=Resources.Global.Logout %></a></li>
+            </ul>
+        </div> 
     </header>
 
     <div class="container-fluid page">
-        <div class="row-fluid">
-            <div class="span2">
+        <div class="row">
+            <div class="col-md-2">
                 <section class="sidebar-nav sidebar" runat="server" id="sidebar">
                     <div class="logo-container">
                         <h4>Data Management System</h4>
@@ -41,11 +40,11 @@
                         <%--<img class="logo" src="/Images/logo.png" />--%>
                     </div>
                     <ul id="menu" class="nav nav-list menu" runat="server" clientidmode="Static">
-                    </ul>                    
+                    </ul>
                 </section>
             </div>
 
-            <section class="span10 content">
+            <section class="col-md-10 content">
                 <form id="main_form" runat="server">
 
                     <asp:ScriptManager ID="script_manager" runat="server" EnablePartialRendering="True">
@@ -54,28 +53,28 @@
                             <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" />
                         </Scripts>
                     </asp:ScriptManager>
-                    
+
                     <%=Scripts.Render("~/js") %>
 
-                    <div class="row-fluid">
-                        <div class="span12">
+                    <div class="row">
+                        <div class="col-md-12">
                             <!-- Message container start-->
-                            <div runat="server" id="message_container" ClientIDMode="Static" Visible="False"></div>
+                            <div runat="server" id="message_container" clientidmode="Static" visible="False"></div>
                             <!-- Message container end -->
-                            
+
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
                         </div>
                     </div>
 
-                   
+
                 </form>
             </section>
         </div>
     </div>
 
-    <footer class="row-fluid">
-        <div class="span12">
+    <footer class="row">
+        <div class="col-md-12">
             Data Management System &copy; <%=DateTime.Now.Year %><br />
             Open source project | Fork it on <a href="https://github.com/ernado-x/X.DynamicData">GitHub</a> | Information <a href="http://andrew.gubskiy.com/publication/item/data-management-system">for developers</a> (rus) | Powered by ASP.NET Dynamic Data
         </div>

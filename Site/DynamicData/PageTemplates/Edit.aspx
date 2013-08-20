@@ -22,7 +22,7 @@
                         <tr class="td">
                             <td colspan="2">
                                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary save" CommandName="Update" Text="<%$ Resources:Global, Update %>" />
-                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn" CommandName="Cancel" Text="<%$ Resources:Global, Cancel %>" CausesValidation="false" />
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-default" CommandName="Cancel" Text="<%$ Resources:Global, Cancel %>" CausesValidation="false" />
                             </td>
                         </tr>
                     </table>

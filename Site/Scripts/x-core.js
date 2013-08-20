@@ -6,7 +6,7 @@
 }
 
 $(document).ready(function () {
-    positionFooter();
+    //positionFooter();
     $(window).scroll(positionFooter);
     $(window).resize(positionFooter);
     $(window).load(positionFooter);

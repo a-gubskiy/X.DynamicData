@@ -71,7 +71,7 @@
             <br />
 
             <div class="DDBottomHyperLink">
-                <asp:DynamicHyperLink ID="InsertHyperLink" CssClass="btn" runat="server" Action="Insert" Text="<%$ Resources:Global, Add %>"></asp:DynamicHyperLink>
+                <asp:DynamicHyperLink ID="InsertHyperLink" CssClass="btn btn-default" runat="server" Action="Insert" Text="<%$ Resources:Global, Add %>"></asp:DynamicHyperLink>
                 <asp:Button OnClick="RemoveSelectedRows" runat="server" ID="RemoveSelected" CssClass="btn btn-danger" Text="<%$ Resources:Global, RemoveSelected %>" OnClientClick="<%$ Resources:Global, AreYourSureToRemoveRecords %>" />
             </div>
 

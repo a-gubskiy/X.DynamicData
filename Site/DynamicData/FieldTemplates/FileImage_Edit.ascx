@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="Site.FileImage_Edit" Codebehind="FileImage_Edit.ascx.cs" %>
 
 <ul class="thumbnails">
-    <li class="span4">
+    <li class="col-md-4">
         <a href="#" class="thumbnail">
             <asp:Image CssClass="imageControl" ID="ImageEdit" ImageUrl="<%# String.IsNullOrEmpty(FieldValueString) ? String.Empty : X.DynamicData.Core.Global.Context.FileStorageUrl + FieldValueString %>" runat="server" />
         </a>

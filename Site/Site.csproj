@@ -538,6 +538,7 @@
     <Content Include="Content\custom.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\normalize.css" />
+    <Content Include="Content\signin.css" />
     <Content Include="Content\site.css" />
     <Content Include="Default.aspx" />
     <Content Include="DynamicData\Content\GridViewPager.ascx" />

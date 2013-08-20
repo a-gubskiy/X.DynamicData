@@ -44,7 +44,7 @@ namespace Site
             switch (icon)
             {
                 case MessageBoxIcon.Error:
-                    @class = "alert alert-error";
+                    @class = "alert alert-danger";
                     break;
                 case MessageBoxIcon.Information:
                     @class = "alert alert-success";
@@ -53,10 +53,10 @@ namespace Site
                     @class = "alert alert-info";
                     break;
                 case MessageBoxIcon.Question:
-                    @class = "alert alert-block";
+                    @class = "alert alert-warning";
                     break;
                 case MessageBoxIcon.Warning:
-                    @class = "alert alert-block";
+                    @class = "alert alert-warning";
                     break;
             }
 

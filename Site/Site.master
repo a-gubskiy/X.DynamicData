@@ -12,25 +12,27 @@
 <body>
 
     <header class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand" id="brand" runat="server" clientidmode="Static">Data Management System</a>
-        </div>
-        <div class="navbar-collapse collapse" id="top_nav" clientidmode="Static" runat="server">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a target="new" runat="server" id="site_link" href="#"><%=Resources.Global.WebApplicationLink %></a></li>
-                <li><a href="/System/systeminformation.aspx"><%=Resources.Global.SystemInformationPageTite %></a></li>
-                <li><a href="/System/serverInformation.aspx"><%=Resources.Global.ServerInformationPageTite %></a></li>
-                <li><a href="/System/login.aspx?logout=true"><%=Resources.Global.Logout %></a></li>
-            </ul>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" id="brand" runat="server" clientidmode="Static">Data Management System</a>
+            </div>
+            <div class="navbar-collapse collapse" id="top_nav" clientidmode="Static" runat="server">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a target="new" runat="server" id="site_link" href="#"><%=Resources.Global.WebApplicationLink %></a></li>
+                    <li><a href="/System/systeminformation.aspx"><%=Resources.Global.SystemInformationPageTite %></a></li>
+                    <li><a href="/System/serverInformation.aspx"><%=Resources.Global.ServerInformationPageTite %></a></li>
+                    <li><a href="/System/login.aspx?logout=true"><%=Resources.Global.Logout %></a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container top-space">
         <div class="row">
             <div class="col-md-2">
                 <section class="sidebar-nav sidebar" runat="server" id="sidebar">
@@ -71,13 +73,16 @@
                 </form>
             </section>
         </div>
+
+        <footer class="row">
+            <div class="col-md-12">
+                Data Management System &copy; <%=DateTime.Now.Year %><br />
+                Open source project | Fork it on <a href="https://github.com/ernado-x/X.DynamicData">GitHub</a> | Information <a href="http://andrew.gubskiy.com/publication/item/data-management-system">for developers</a> (rus) | Powered by ASP.NET Dynamic Data
+            </div>
+        </footer>
     </div>
-    <footer class="row">
-        <div class="col-md-12">
-            Data Management System &copy; <%=DateTime.Now.Year %><br />
-            Open source project | Fork it on <a href="https://github.com/ernado-x/X.DynamicData">GitHub</a> | Information <a href="http://andrew.gubskiy.com/publication/item/data-management-system">for developers</a> (rus) | Powered by ASP.NET Dynamic Data
-        </div>
-    </footer>
+
+
 
 </body>
 </html>

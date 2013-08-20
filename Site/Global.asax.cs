@@ -43,6 +43,7 @@ namespace Site
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/normalize.css",
                                                          "~/Content/site.css",
                                                          "~/Content/chosen.css",
+                                                         "~/Content/signin.css",
                                                          "~/Content/bootstrap/bootstrap.min.css",
                                                          //"~/Content/bootstrap/bootstrap-theme.min.css",
                                                          "~/Content/bootstrap-datepicker.min.css",

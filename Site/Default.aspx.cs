@@ -23,7 +23,7 @@ namespace Site
                 system_links.InnerHtml = String.Join(String.Empty, (from o in Navigator.GetSystemLinks()
                                                                     select String.Format("<a class=\"btn square\" href=\"{0}\"><i class=\"{1}\"></i><br />{2}</a>", o.Url, o.Icon, o.Title)).ToArray());
 
-                plugin_widget.Visible = Navigator.GetCustomLinks().Count() > 0;
+                plugin_widget.Visible = Navigator.GetCustomLinks().Any();
             }
 
             if (!Global.CanCreateDataContext())
@@ -37,7 +37,7 @@ namespace Site
             }
 
 
-            login_title.InnerHtml = String.Format("{0}: <strong>{1}</strong>.<br />{2}:<strong>{3}</strong>.",
+            login_title.InnerHtml = String.Format("{0}: <strong>{1}</strong>.<br />{2}: <strong>{3}</strong>.",
                 Resources.Global.YouWorkWithProject, Global.Context.Title, Resources.Global.YouLoginAs, WebSecurity.CurrentUserName);
         }
     }

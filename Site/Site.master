@@ -27,10 +27,10 @@
                 <li><a href="/System/serverInformation.aspx"><%=Resources.Global.ServerInformationPageTite %></a></li>
                 <li><a href="/System/login.aspx?logout=true"><%=Resources.Global.Logout %></a></li>
             </ul>
-        </div> 
+        </div>
     </header>
 
-    <div class="container-fluid page">
+    <div class="container">
         <div class="row">
             <div class="col-md-2">
                 <section class="sidebar-nav sidebar" runat="server" id="sidebar">
@@ -72,7 +72,6 @@
             </section>
         </div>
     </div>
-
     <footer class="row">
         <div class="col-md-12">
             Data Management System &copy; <%=DateTime.Now.Year %><br />

@@ -44,7 +44,8 @@ table.DDDetailsTable {
 
 
 header {
-    border-top: 3px solid #FD5814;
+    background-color: #444444 !important;
+    border-top: 3px solid #FD5814 !important;
 }
 
     header a {
@@ -170,13 +171,6 @@ footer {
 
 .nav > li > a {
     display: block;
-}
-
-.sidebar-nav {
-}
-
-.container-fluid {
-    padding-right: 0 !important;
 }
 
 .navbar .nav > li > a:hover {
@@ -756,4 +750,8 @@ label {
     font-size: 20px;
     padding-bottom: 25px;
     padding-left: 55px;
+}
+
+#message_container {
+    margin-top: 10px;
 }

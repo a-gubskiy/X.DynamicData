@@ -2,9 +2,8 @@
 
 <asp:Content ID="main_content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Login ID="login_control" runat="server" CssClass="login" OnAuthenticate="LoginControlAuthenticate" DisplayRememberMe="False" TitleTextStyle-CssClass="login-title">
+    <asp:Login ID="login_control" RenderOuterTable="False" runat="server" OnAuthenticate="LoginControlAuthenticate" DisplayRememberMe="False" TitleTextStyle-CssClass="login-title">
         <LoginButtonStyle CssClass="btn btn-default" />
     </asp:Login>
-
 
 </asp:Content>

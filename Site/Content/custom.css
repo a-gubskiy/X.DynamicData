@@ -120,11 +120,9 @@ footer {
     }
 
     .menu > li:first-child > a {
-        /*border-top: 1px solid #CCC;*/
     }
 
     .menu > li > a {
-        /*background: -moz-linear-gradient(center top, #FAFAFA 0%, #EEEEEE 100%) repeat scroll 0 0 transparent;*/
         border-color: #FDFDFD #CCCCCC #CCCCCC;
         border-style: solid;
         border-width: 1px;
@@ -210,7 +208,6 @@ footer {
 
 
 a:hover [class^="icon-"], a:hover [class*=" icon-"] {
-    background-image: url("/Images/glyphicons-halflings-orange.png") !important;
 }
 
 .btn [class^="icon-"] {
@@ -257,15 +254,12 @@ a:hover [class^="icon-"], a:hover [class*=" icon-"] {
     min-width: 615px;
 }
 
-textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-    -webkit-box-shadow: none;
-}
 
-    textarea.DDControl {
-        padding: 2px;
-        width: 602px;
-        border: 1px solid #DDDDDD;
-    }
+textarea.DDControl {
+    padding: 2px;
+    width: 602px;
+    border: 1px solid #DDDDDD;
+}
 
 
 
@@ -405,7 +399,10 @@ th {
 .chzn-container-active .chzn-single-with-drop, .cke_reset_all, .cke_reset_all *, .btn, textarea input[type="text"],
 input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"],
 input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"],
-input[type="tel"], input[type="color"], .uneditable-input, .cke_dialog_ui_button_ok, .panel {
+input[type="tel"], input[type="color"], .uneditable-input, .cke_dialog_ui_button_ok, .panel, .form-control,
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"],
+input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"],
+input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
     -ms-border-radius: 0 0 0 0 !important;
     border-radius: 0 0 0 0 !important;
     -webkit-box-shadow: none;

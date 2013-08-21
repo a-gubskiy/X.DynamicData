@@ -41,7 +41,7 @@
             <br />
 
             <div class="DDBottomHyperLink">
-                <asp:DynamicHyperLink ID="ListHyperLink" runat="server" Action="List">Show all items</asp:DynamicHyperLink>
+                <asp:DynamicHyperLink ID="ListHyperLink" CssClass="btn btn-default btn-list" runat="server" Action="List">Show all items</asp:DynamicHyperLink>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

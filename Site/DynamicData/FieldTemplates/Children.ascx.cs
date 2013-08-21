@@ -25,9 +25,9 @@ namespace Site
                 {
                     link = BuildChildrenPath(NavigateUrl);
                     text = ChildrenColumn.ChildTable.DisplayName;
-                }
+                }                 
 
-                return String.Format("<a target=\"_{2}\" class=\"btn\" href=\"{0}\" />{1}&nbsp;&nbsp;<i class=\"icon-arrow-right\"></i></a>", link, text, ChildrenColumn.ChildTable.Name);
+                return String.Format("<a target=\"_{2}\" class=\"btn btn-default\" href=\"{0}\" />{1}&nbsp;&nbsp;<i class=\"glyphicon glyphicon-arrow-right\"></i></a>", link, text, ChildrenColumn.ChildTable.Name);
             }
         }
 

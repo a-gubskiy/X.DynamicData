@@ -47,8 +47,8 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:CheckBox CssClass="select" ID="select_row" runat="server" />
-                            <asp:DynamicHyperLink CssClass="edit" ID="edit_link" runat="server" Action="Edit" Text=" " />&nbsp;
-                            <asp:LinkButton CssClass="delete" ID="delete_link" runat="server" CommandName="Delete" Text=" " OnClientClick="<%$ Resources:Global, AreYourSureToRemoveRecord %>" />&nbsp;
+                            <asp:DynamicHyperLink CssClass="glyphicon glyphicon-pencil" ID="edit_link" runat="server" Action="Edit" Text=" " />&nbsp;
+                            <asp:LinkButton CssClass="glyphicon glyphicon-remove" ID="delete_link" runat="server" CommandName="Delete" Text=" " OnClientClick="<%$ Resources:Global, AreYourSureToRemoveRecord %>" />&nbsp;
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

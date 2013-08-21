@@ -1,21 +1,22 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Scada:400italic,700italic,400,700&subset=latin,cyrillic);
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,cyrillic);
 
 html, body {
-    font-family: 'Scada', sans-serif;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
 }
 
 html {
-    background-color: #444; 
+    background-color: #318fc1;
 }
 
-body {
-    background: url("/images/bg.png") repeat scroll 0 0 transparent;
-    padding: 0 !important;
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #427A98;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
 }
 
-h1, h2, h3 {
-    color: #FD5814;
-    font-weight: normal;
+input {
+    font-family: 'Roboto',sans-serif;
 }
 
 a {
@@ -24,8 +25,8 @@ a {
 }
 
     a:hover {
-        color: #FD5814 !important;
         text-decoration: none !important;
+        color: #318FC1 !important;
     }
 
 .btn-primary {
@@ -42,19 +43,21 @@ table.DDDetailsTable {
 
 .btn {
     padding-right: 15px !important;
-    -ms-border-radius: 0 0 0 0 !important;
-    border-radius: 0 0 0 0 !important;
 }
 
 
 header {
-    background-color: #444444 !important;
-    border-top: 3px solid #FD5814 !important;
+    background-color: #318fc1 !important;
+    border-top: 3px solid #3276B1 !important;
 }
 
     header a {
         color: #FFF !Important;
     }
+
+        header a:hover {
+            color: #FFF !Important;
+        }
 
 
 [class^="icon-"],
@@ -68,35 +71,18 @@ header {
     padding-right: 25px;
 }
 
-.delete, .edit {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    background-image: url("/images/glyphicons-halflings.png");
+.select_all {
 }
-
-    .delete:hover, .edit:hover {
-        background-image: url("/images/glyphicons-halflings-orange.png");
-    }
-
-.edit {
-    background-position: 0 -72px;
-}
-
-.delete {
-    background-position: -312px 0;
-}
-
 
 div.DDBottomHyperLink a:hover {
-    color: #FD5814 !important;
+    /*color: #FD5814 !important;*/
     text-decoration: none !important;
 }
 
 
 footer {
-    background-color: #444444;
-    border-top: 3px solid #FD5814;
+    background-color: #318fc1 !important;
+    border-top: 3px solid #427a98 !important;
     color: #EEEEEE;
     font-size: 9pt;
     padding-top: 15px;
@@ -104,10 +90,11 @@ footer {
 }
 
     footer a {
-        color: #AAAAAA !important;
+        color: #FFF !important;
     }
 
         footer a:hover {
+            color: #000 !important;
         }
 
     footer div {
@@ -146,6 +133,7 @@ footer {
         font-size: 10pt;
         margin: 0;
         padding: 8px 14px;
+        border-top: none;
     }
 
         .menu > li > a:hover {
@@ -178,12 +166,10 @@ footer {
 }
 
 .navbar .nav > li > a:hover {
-    background-color: #4A4A4A;
+    background-color: #427A98;
 }
 
-input {
-    font-family: 'Scada', sans-serif;
-}
+
 
 .DDFooter input, .DDFooter label {
     display: inline-block !important;
@@ -220,17 +206,6 @@ input {
     border-bottom: 1px solid #393939;
     background-color: #444444;
     background-image: none;
-}
-
-.navbar .nav > li > a {
-    border-right: 1px solid #000000;
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
-    border-left: 1px solid #ffffff;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-
-.menu [class^="icon-"], .menu [class*=" icon-"] {
 }
 
 
@@ -283,9 +258,7 @@ a:hover [class^="icon-"], a:hover [class*=" icon-"] {
 }
 
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-    border-radius: 0;
     -webkit-box-shadow: none;
-    box-shadow: none;
 }
 
     textarea.DDControl {
@@ -304,7 +277,6 @@ select {
     margin-right: 0 !important;
     margin-left: 0 !important;
     padding: 0 !important;
-    border-radius: 0 0 0 0 !important;
 }
 
 .login {
@@ -341,6 +313,7 @@ select {
 .sidebar {
     margin-top: 15px;
     margin-bottom: 15px;
+    background-color: #FFF;
 }
 
     .sidebar i {
@@ -361,8 +334,9 @@ select {
 }
 
 th {
-    background: -moz-linear-gradient(center top, #FDFDFD 0%, #EAEAEA 100%);
-    background: linear-gradient(top, #FCFCFC 0%, #E9E9E9 100%);
+    background-color: #F5F5F5;
+    color: #000000;
+    font-weight: 500;
 }
 
 
@@ -412,46 +386,37 @@ th {
         font-size: 12pt;
     }
 
-        .startup a:hover {
-        }
-
-
-
 
 #log_list i {
     cursor: pointer;
 }
 
-    #log_list i:hover {
-        color: #FD5814;
-    }
-
 .log {
     display: none;
 }
 
-.table-bordered,
-.table-bordered thead:last-child tr:last-child > th:first-child, .table-bordered tbody:last-child tr:last-child > td:first-child, .table-bordered tbody:last-child tr:last-child > th:first-child, .table-bordered tfoot:last-child tr:last-child > td:first-child, .table-bordered tfoot:last-child tr:last-child > th:first-child,
-.table-bordered thead:first-child tr:first-child > th:first-child, .table-bordered tbody:first-child tr:first-child > td:first-child, .table-bordered tbody:first-child tr:first-child > th:first-child,
-.datepicker table tr td span {
-    border-radius: 0;
+
+.datepicker table tr td span, .datepicker td, .datepicker th, select, .cke_toolgroup, .cke_combo_button, .alert, .table-bordered,
+.table-bordered thead:last-child tr:last-child > th:first-child, .table-bordered tbody:last-child tr:last-child > td:first-child,
+.table-bordered tbody:last-child tr:last-child > th:first-child, .table-bordered tfoot:last-child tr:last-child > td:first-child,
+.table-bordered tfoot:last-child tr:last-child > th:first-child, .table-bordered thead:first-child tr:first-child > th:first-child,
+.table-bordered tbody:first-child tr:first-child > td:first-child, .table-bordered tbody:first-child tr:first-child > th:first-child,
+.chzn-container-single .chzn-drop, .chzn-container-single .chzn-single, .chzn-container-multi .chzn-choices .search-choice,
+.chzn-container-active .chzn-single-with-drop, .cke_reset_all, .cke_reset_all *, .btn, textarea input[type="text"],
+input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"],
+input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"],
+input[type="tel"], input[type="color"], .uneditable-input, .cke_dialog_ui_button_ok, .panel {
+    -ms-border-radius: 0 0 0 0 !important;
+    border-radius: 0 0 0 0 !important;
+    -webkit-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
 }
 
 .break-word {
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
-
-.system-btn {
-    width: 200px;
-    font-weight: bold;
-    font-size: 10pt;
-}
-
-input.system-btn {
-    width: 230px;
-}
-
 
 
 @media (max-width: 767px) {
@@ -534,12 +499,7 @@ input.system-btn {
 }
 
 
-.chzn-container-single .chzn-drop,
-.chzn-container-single .chzn-single,
-.chzn-container-multi .chzn-choices .search-choice,
-.chzn-container-active .chzn-single-with-drop {
-    border-radius: 0 !important;
-}
+
 
 .left {
     float: left;
@@ -593,17 +553,13 @@ td, .td {
     background: #EEE !important;
 }
 
-.datepicker td, .datepicker th,
-.cke_toolgroup, .cke_combo_button {
-    border-radius: 0 !important;
-}
+
 
 .DDTextBox {
     font-family: 'Scada', sans-serif !important;
 }
 
 .cke_reset_all, .cke_reset_all * {
-    border-radius: 0 !important;
     font-family: 'Scada', sans-serif !important;
 }
 
@@ -618,7 +574,6 @@ td, .td {
     min-width: 85px;
     border-color: #000000 #000000 #000000 !important;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;
-    border-radius: 0 0 0 0 !important;
     background-image: linear-gradient(to bottom, #0088CC, #0044CC) !important;
     color: #FFFFFF !important;
     -webkit-text-shadow: none !important;
@@ -660,6 +615,10 @@ div.DDBottomHyperLink {
 label {
     display: inline-block;
     margin-bottom: 5px;
+    -moz-min-width: 150px;
+    -ms-min-width: 150px;
+    -o-min-width: 150px;
+    -webkit-min-width: 150px;
     min-width: 150px;
     font-family: 'Scada',sans-serif !important;
 }
@@ -673,9 +632,6 @@ label {
         padding-top: 0;
     }
 
-.select_all {
-}
-
 
 .DDFilter {
     color: #666666;
@@ -687,9 +643,7 @@ label {
     min-width: 200px;
 }
 
-.alert {
-    border-radius: 0px !important;
-}
+
 
 .btn-danger {
     color: #EEEEEE !important;
@@ -712,18 +666,21 @@ label {
 
 
 .square {
-    /*background: -moz-linear-gradient(center top, #FAFAFA 0%, #EEEEEE 100%) repeat scroll 0 0 transparent;*/
-    font-size: 9pt;
+    font-size: 8pt;
     height: 80px;
     margin-bottom: 15px;
     margin-right: 15px;
     padding: 15px 10px 10px;
     text-align: center;
     white-space: pre-wrap;
-    width: 100px;
+    width: 95px;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
+
+    .square .glyphicon {
+        font-size: 12pt;
+    }
 
 
 .login-title {
@@ -738,7 +695,7 @@ label {
 }
 
 .top-space {
-    margin-top: 55px;
+    padding-top: 80px;
 }
 
 .container {
@@ -748,5 +705,30 @@ label {
 .thumbnail {
     max-width: 300px;
     max-height: 300px;
+}
 
+a.btn:hover {
+}
+
+.control-panel .btn {
+    width: 230px;
+}
+
+    .control-panel .btn:hover {
+        color: #FFFFFF !important;
+    }
+
+
+a.btn-primary:hover {
+    color: #FFFFFF !important;
+}
+
+.btn-list {
+    margin-left: 5px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .top-space {
+    }
 }

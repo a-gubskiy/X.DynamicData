@@ -25,7 +25,7 @@ namespace X.DynamicData.Core
         {
             var list = new List<Link>();
 
-            AddLinkToList(list, "/", "glyphicon glyphicon -home", Global.GetText("HomePageTitle"));
+            AddLinkToList(list, "/", "glyphicon glyphicon-home", Global.GetText("HomePageTitle"));
 
 
             list.AddRange(GetCustomLinks());

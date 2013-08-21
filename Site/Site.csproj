@@ -594,10 +594,6 @@
     <Content Include="Images\ajax-loader.gif" />
     <Content Include="Images\bg.png" />
     <Content Include="Images\chosen-sprite.png" />
-    <Content Include="Images\glyphicons-halflings-orange.png" />
-    <Content Include="Images\glyphicons-halflings-white.png" />
-    <Content Include="Images\glyphicons-halflings.png" />
-    <Content Include="Images\logo.png" />
     <Content Include="Plugins\ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

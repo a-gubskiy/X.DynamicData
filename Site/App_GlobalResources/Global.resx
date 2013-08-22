@@ -288,4 +288,7 @@
   <data name="TableLinks" xml:space="preserve">
     <value>Entities</value>
   </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Incorrect login or password</value>
+  </data>
 </root>

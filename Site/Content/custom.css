@@ -10,7 +10,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: #427A98;
+    color: #4A8BC2;
     font-weight: 300;
     font-family: 'Roboto',sans-serif;
 }
@@ -18,7 +18,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .chzn-container-single .chzn-single span,
 .chzn-container .chzn-results .active-result,
 div.DDBottomHyperLink {
-    font: 1em 'Roboto',sans-serif !important;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
 }
 
 .panel-default > .panel-heading,
@@ -78,15 +79,12 @@ header {
             color: #FFFFFF !important;
         }
 
-
-[class^="icon-"],
-[class*=" icon-"] {
-    background-image: url("/images/glyphicons-halflings.png");
-}
+    header .navbar-toggle .icon-bar {
+        background-color: #FFF;
+    }
 
 
 .content {
-    margin-top: 15px;
     padding-right: 25px;
 }
 
@@ -256,11 +254,7 @@ a:hover [class^="icon-"], a:hover [class*=" icon-"] {
     min-width: 215px;
 }
 
-.ajax__html_editor_extender_container {
-    margin-bottom: 15px;
-    padding: 3px !important;
-    min-width: 615px;
-}
+
 
 
 textarea.DDControl {
@@ -313,13 +307,13 @@ select {
 }
 
 .sidebar {
-    margin-top: 15px;
     margin-bottom: 15px;
     background-color: #FFF;
 }
 
     .sidebar i {
         margin-top: 1px;
+        font-size: 9pt;
     }
 
 #server_information caption,
@@ -339,19 +333,6 @@ th {
     background-color: #F5F5F5;
     color: #000000;
     font-weight: 500;
-}
-
-
-.ajax__html_editor_extender_container input {
-    margin-top: 5px;
-}
-
-.ajax__html_editor_extender_container select {
-    margin-top: 5px;
-}
-
-.ajax__html_editor_extender_container span {
-    margin-top: 5px;
 }
 
 .backcolorclass {
@@ -466,7 +447,6 @@ a.cke_dialog_ui_button, a.cke_dialog_ui_button_ok, .cke_button_on, .cke_chrome, 
 
     .DDDetailsTable textarea,
     .DDDetailsTable input[type="date"],
-    .ajax__html_editor_extender_container,
     .DDDetailsTable input[type="text"],
     .DDDetailsTable input[type="password"],
     .DDDetailsTable input[type="datetime"],
@@ -583,6 +563,7 @@ td, .td {
 
 .load-progress {
     float: right;
+    margin-top: -20px;
 }
 
 .DD {
@@ -677,7 +658,6 @@ label {
 }
 
 #message_container {
-    margin-top: 10px;
 }
 
 .top-space {
@@ -818,4 +798,46 @@ a.cke_dialog_ui_button_ok {
 .chzn-container-single .chzn-single {
     background: none !important;
     background-image: none !important;
+    min-height: 30px !important;
+}
+
+
+@media (max-width: 500px) {
+
+
+    .DDDetailsTable input[type="text"],
+    .DDDetailsTable input[type="password"],
+    .DDDetailsTable input[type="datetime"],
+    .DDDetailsTable input[type="datetime-local"],
+    .DDDetailsTable input[type="date"],
+    .DDDetailsTable input[type="month"],
+    .DDDetailsTable input[type="time"],
+    .DDDetailsTable input[type="week"],
+    .DDDetailsTable input[type="number"],
+    .DDDetailsTable input[type="email"],
+    .DDDetailsTable input[type="url"],
+    .DDDetailsTable input[type="search"],
+    .DDDetailsTable input[type="tel"],
+    .DDDetailsTable input[type="color"],
+    .DDDetailsTable textarea {
+        padding: 4px;
+        min-width: 200px;
+    }
+}
+
+
+.chzn-container .chzn-results .highlighted {
+    background-color: #318FC1;
+    background-image: none;
+}
+
+
+.chzn-drop,
+.chzn-container,
+.chzn-single-with-drop {
+    -moz-min-width: 250px;
+    -ms-min-width: 250px;
+    -o-min-width: 250px;
+    -webkit-min-width: 250px;
+    min-width: 250px;
 }

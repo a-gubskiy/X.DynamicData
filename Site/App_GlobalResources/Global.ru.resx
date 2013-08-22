@@ -288,4 +288,7 @@
   <data name="TableLinks" xml:space="preserve">
     <value>Данные</value>
   </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>В доступе отказано</value>
+  </data>
 </root>

@@ -2,8 +2,8 @@
 
 
 
-<div class="input-prepend">
-    <span class="add-on"><i class="icon-home"></i></span>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
     <asp:TextBox ID="TextBox1" runat="server" Text='<%# FieldValueEditString %>' CssClass="DDTextBox"></asp:TextBox>
 </div>
 

@@ -1,22 +1,39 @@
 ﻿@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,cyrillic);
 
 html, body {
-    font-family: 'Roboto',sans-serif;
     font-weight: 300;
+    font-family: 'Roboto',sans-serif;
 }
 
 html {
-    background-color: #318fc1;
+    background-color: #F0F0F0;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #427A98;
-    font-family: 'Roboto',sans-serif;
     font-weight: 300;
+    font-family: 'Roboto',sans-serif;
 }
 
-input {
-    font-family: 'Roboto',sans-serif;
+.chzn-container-single .chzn-single span,
+.chzn-container .chzn-results .active-result,
+div.DDBottomHyperLink {
+    font: 1em 'Roboto',sans-serif !important;
+}
+
+.panel-default > .panel-heading,
+.panel-heading {
+    background-color: #4A8BC2 !important;
+}
+
+    .panel-heading h3 {
+        color: #FFF;
+    }
+
+input, label, .DDDetailsTable .td, .DDFilter,
+.DDTextBox, .cke_reset_all, .cke_reset_all * {
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 300 !important;
 }
 
 a {
@@ -25,8 +42,8 @@ a {
 }
 
     a:hover {
-        text-decoration: none !important;
         color: #318FC1 !important;
+        text-decoration: none !important;
     }
 
 .btn-primary {
@@ -47,8 +64,8 @@ table.DDDetailsTable {
 
 
 header {
-    background-color: #318fc1 !important;
     border-top: 3px solid #3276B1 !important;
+    background: linear-gradient(to bottom, #4A8BC2, #4A8BC2) repeat scroll 0 0 #4A8BC2;
 }
 
     header a {
@@ -56,7 +73,9 @@ header {
     }
 
         header a:hover {
-            color: #FFF !Important;
+            background: none repeat scroll 0 0 #000000 !important;
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0.20) !important;
+            color: #FFFFFF !important;
         }
 
 
@@ -81,21 +100,11 @@ div.DDBottomHyperLink a:hover {
 
 
 footer {
-    background-color: #318fc1 !important;
-    border-top: 3px solid #427a98 !important;
-    color: #EEEEEE;
-    font-size: 9pt;
-    padding-top: 15px;
     margin-top: 25px;
+    padding-top: 15px;
+    background-color: #F0F0F0;
+    font-size: 9pt;
 }
-
-    footer a {
-        color: #FFF !important;
-    }
-
-        footer a:hover {
-            color: #000 !important;
-        }
 
     footer div {
         padding-right: 15px;
@@ -123,26 +132,26 @@ footer {
     }
 
     .menu > li > a {
-        border-color: #FDFDFD #CCCCCC #CCCCCC;
-        border-style: solid;
-        border-width: 1px;
-        color: #5F5F5F;
         display: block;
-        font-size: 10pt;
         margin: 0;
         padding: 8px 14px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #FDFDFD #CCCCCC #CCCCCC;
         border-top: none;
+        color: #5F5F5F;
+        font-size: 10pt;
     }
 
         .menu > li > a:hover {
-            border-left: 3px solid;
             padding-left: 13px;
+            border-left: 3px solid;
         }
 
     .menu i {
         display: inline-block;
-        margin-right: 8px !important;
         margin-top: 1px !important;
+        margin-right: 8px !important;
     }
 
 .table th, .table td {
@@ -182,7 +191,6 @@ footer {
     .DDDetailsTable .td {
         border: none !important;
         font-size: inherit !important;
-        font-family: 'Scada', sans-serif !important;
     }
 
 .DDLightHeader {
@@ -320,11 +328,11 @@ select {
 }
 
 .logo-container {
-    border: 1px solid #CCCCCC;
-    color: #777777;
+    padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
-    padding-top: 10px;
+    border: 1px solid #CCCCCC;
+    color: #777777;
 }
 
 th {
@@ -402,12 +410,15 @@ input[type="time"], input[type="week"], input[type="number"], input[type="email"
 input[type="tel"], input[type="color"], .uneditable-input, .cke_dialog_ui_button_ok, .panel, .form-control,
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"],
 input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"],
-input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input,
+a.cke_dialog_ui_button, a.cke_dialog_ui_button_ok, .cke_button_on, .cke_chrome, .panel-heading {
     -ms-border-radius: 0 0 0 0 !important;
     border-radius: 0 0 0 0 !important;
-    -webkit-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -ms-text-shadow: none !important;
+    -webkit-text-shadow: none !important;
+    text-shadow: none !important;
 }
 
 .break-word {
@@ -542,23 +553,10 @@ td, .td {
     vertical-align: top;
 }
 
-.cke_top {
-    background: #EEE !important;
-}
-
-.cke_bottom {
-    background: #EEE !important;
-}
 
 
 
-.DDTextBox {
-    font-family: 'Scada', sans-serif !important;
-}
 
-.cke_reset_all, .cke_reset_all * {
-    font-family: 'Scada', sans-serif !important;
-}
 
 .cke_button {
     border-color: #000000 #000000 #B3B3B3 !important;
@@ -581,11 +579,7 @@ td, .td {
     background: none;
 }
 
-.chzn-container-single .chzn-single span,
-.chzn-container .chzn-results .active-result,
-div.DDBottomHyperLink {
-    font: 1em Scada,Sans-Serif !important;
-}
+
 
 .load-progress {
     float: right;
@@ -612,12 +606,8 @@ div.DDBottomHyperLink {
 label {
     display: inline-block;
     margin-bottom: 5px;
-    -moz-min-width: 150px;
-    -ms-min-width: 150px;
-    -o-min-width: 150px;
-    -webkit-min-width: 150px;
     min-width: 150px;
-    font-family: 'Scada',sans-serif !important;
+    font-weight: 300;
 }
 
 .grid-view {
@@ -625,15 +615,14 @@ label {
 }
 
     .grid-view .btn {
-        padding-bottom: 0;
         padding-top: 0;
+        padding-bottom: 0;
     }
 
 
 .DDFilter {
     color: #666666;
     font-size: 10pt;
-    font-family: 'Scada',sans-serif !important;
 }
 
 .chzn-search input[type="text"] {
@@ -648,12 +637,12 @@ label {
 
 #startup_menu a {
     display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
     width: 100px;
     height: 100px;
     text-align: center;
     line-height: 20px;
-    margin-bottom: 10px;
-    margin-right: 10px;
 }
 
 #startup_menu li {
@@ -663,16 +652,16 @@ label {
 
 
 .square {
-    font-size: 8pt;
-    height: 80px;
-    margin-bottom: 15px;
     margin-right: 15px;
+    margin-bottom: 15px;
     padding: 15px 10px 10px;
+    width: 95px;
+    height: 80px;
     text-align: center;
     white-space: pre-wrap;
-    width: 95px;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
+    font-size: 8pt;
 }
 
     .square .glyphicon {
@@ -681,10 +670,10 @@ label {
 
 
 .login-title {
-    color: #FD5814;
-    font-size: 20px;
     padding-bottom: 25px;
     padding-left: 55px;
+    color: #FD5814;
+    font-size: 20px;
 }
 
 #message_container {
@@ -728,4 +717,105 @@ a.btn-primary:hover {
 
     .top-space {
     }
+}
+
+.cke_reset_all, .cke_reset_all *,
+.cke_combo_button {
+    background-color: #FFF;
+    background-image: none !important;
+}
+
+
+.cke_combo_off a.cke_combo_button:active, .cke_combo_on a.cke_combo_button {
+    border: 1px solid #777777;
+    background: #EBEBEB !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.cke_top {
+    background: #FFF !important;
+}
+
+.cke_bottom {
+    background: #FFF !important;
+}
+
+
+.cke_panel_grouptitle {
+    background: #FFF !important;
+}
+
+.cke_dialog_title {
+    background: #EEE !important;
+}
+
+.cke_dialog_body,
+.cke_dialog_title,
+.cke_dialog_footer,
+.cke_reset_all,
+.cke_combo_button,
+.cke_toolgroup {
+    background: #FFF !important;
+}
+
+
+input.cke_dialog_ui_input_text, input.cke_dialog_ui_input_password, textarea.cke_dialog_ui_input_textarea {
+    -ms-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.cke_button_on {
+    background: none repeat scroll 0 0 #DDDDDD;
+}
+
+a.cke_dialog_ui_button {
+    background: #FFF !important;
+    padding: 6px 15px 6px 12px !important;
+}
+
+    a.cke_dialog_ui_button:hover {
+        background: #EBEBEB !important;
+    }
+
+a.cke_dialog_ui_button_ok {
+    border-color: #357EBD !important;
+    background: #428BCA !important;
+    color: #FFFFFF;
+}
+
+    a.cke_dialog_ui_button_ok span {
+        font-weight: 400 !important;
+    }
+
+    a.cke_dialog_ui_button_ok:hover {
+        background-color: #3276B1 !important;
+        color: #FFFFFF !important;
+    }
+
+
+.cke_dialog_footer_buttons a.cke_dialog_ui_button span {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+}
+
+.cke_dialog .ImagePreviewBox {
+    border: 1px solid #AAA !important;
+}
+
+.cke_chrome {
+    border: 1px solid #DDDDDD;
+    display: block;
+    padding: 0;
+}
+
+.panel-title i {
+    font-size: 10pt;
+    margin-right: 7px;
+}
+
+.chzn-container-single .chzn-single {
+    background: none !important;
+    background-image: none !important;
 }

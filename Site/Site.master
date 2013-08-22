@@ -5,7 +5,6 @@
 <html>
 <head id="page_head" runat="server">
     <title>Data Management System</title>
-    <link href='http://fonts.googleapis.com/css?family=Scada:400italic,700italic,400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <%= Styles.Render("~/Content/css") %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>

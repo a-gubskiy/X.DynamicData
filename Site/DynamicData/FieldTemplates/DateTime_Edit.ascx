@@ -3,7 +3,7 @@
 
 <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    <asp:TextBox ID="TextBox1" TextMode="Date" runat="server" CssClass="droplist date" Text='<%# FieldValueEditString %>' Columns="20"></asp:TextBox>
+    <asp:TextBox ID="TextBox1" TextMode="Date" runat="server" CssClass="droplist date form-control" Text='<%# FieldValueEditString %>' Columns="20"></asp:TextBox>
 </div>
 
 

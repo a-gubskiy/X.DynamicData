@@ -842,3 +842,7 @@ a.cke_dialog_ui_button_ok {
     -webkit-min-width: 250px;
     min-width: 250px;
 }
+
+.input-group .date {
+    max-width: 215px;
+}

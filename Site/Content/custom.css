@@ -66,6 +66,7 @@ table.DDDetailsTable {
 
 header {
     border-top: 3px solid #3276B1 !important;
+    background-color: #4A8BC2;
     background: linear-gradient(to bottom, #4A8BC2, #4A8BC2) repeat scroll 0 0 #4A8BC2;
 }
 

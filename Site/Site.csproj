@@ -249,6 +249,13 @@
     <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
       <DependentUpon>Children_Insert.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Video_Edit.ascx.cs">
+      <DependentUpon>Video_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Video_Edit.ascx.designer.cs">
+      <DependentUpon>Video_Edit.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
       <DependentUpon>DateTime.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -558,6 +565,7 @@
     <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Children.ascx" />
     <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Video_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
     <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />

@@ -46,7 +46,7 @@ namespace Site
                                                          "~/Content/signin.css",
                                                          "~/Content/bootstrap/bootstrap.min.css",
                                                          //"~/Content/bootstrap/bootstrap-theme.min.css",
-                                                         "~/Content/bootstrap-datepicker.min.css",
+                                                         "~/Content/bootstrap-datepicker.css",
                                                          "~/Content/x.bootstrap.css",
                                                          "~/Content/custom.css"));
 

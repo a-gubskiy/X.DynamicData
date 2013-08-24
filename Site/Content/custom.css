@@ -827,8 +827,9 @@ a.cke_dialog_ui_button_ok {
 }
 
 
+.datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover,
 .chzn-container .chzn-results .highlighted {
-    background-color: #318FC1;
+    background-color: #318FC1 !important;
     background-image: none;
 }
 
@@ -845,4 +846,7 @@ a.cke_dialog_ui_button_ok {
 
 .input-group .date {
     max-width: 215px;
+}
+
+.video-container {
 }

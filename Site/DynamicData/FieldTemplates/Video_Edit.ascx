@@ -2,7 +2,7 @@
 
 <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-facetime-video"></i></span>
-    <asp:TextBox ID="TextBox1" TextMode="MultiLine" runat="server" Text='<%# FieldValueEditString %>' CssClass="DDTextBox"></asp:TextBox>
+    <asp:TextBox ID="TextBox1" TextMode="MultiLine" runat="server" Text='<%# FieldValueEditString %>' CssClass="form-control"></asp:TextBox>
 </div>
 
 <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" CssClass="DDControl DDValidator" ControlToValidate="TextBox1" Display="Static" Enabled="false" />

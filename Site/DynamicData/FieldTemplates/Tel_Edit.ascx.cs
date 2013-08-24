@@ -4,19 +4,18 @@ using System.Web.UI;
 
 namespace Site
 {
-    public partial class Text_EditField : System.Web.DynamicData.FieldTemplateUserControl
+    public partial class Tel_EditField : System.Web.DynamicData.FieldTemplateUserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
+
             if (Column.MaxLength < 20)
             {
                 TextBox1.Columns = Column.MaxLength;
             }
-            TextBox1.ToolTip = Column.Description;
 
-            SetUpValidator(RequiredFieldValidator1);
-            SetUpValidator(RegularExpressionValidator1);
-            SetUpValidator(DynamicValidator1);
+            TextBox1.ToolTip = Column.Description;
         }
 
         protected override void OnDataBinding(EventArgs e)

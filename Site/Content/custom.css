@@ -393,7 +393,7 @@ input[type="tel"], input[type="color"], .uneditable-input, .cke_dialog_ui_button
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"],
 input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"],
 input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input,
-a.cke_dialog_ui_button, a.cke_dialog_ui_button_ok, .cke_button_on, .cke_chrome, .panel-heading {
+a.cke_dialog_ui_button, a.cke_dialog_ui_button_ok, .cke_button_on, .cke_chrome, .panel-heading, .input-group-addon {
     -ms-border-radius: 0 0 0 0 !important;
     border-radius: 0 0 0 0 !important;
     -webkit-box-shadow: none !important;
@@ -850,3 +850,24 @@ a.cke_dialog_ui_button_ok {
 
 .video-container {
 }
+
+.password,
+.phone,
+.email {
+    max-width: 300px;
+    -moz-min-width: 100px !important;
+    -ms-min-width: 100px !important;
+    -o-min-width: 100px !important;
+    -webkit-min-width: 100px !important;
+    min-width: 100px !important;
+}
+
+
+/*.DDBottomHyperLink .btn {
+    margin-left: 10px;
+}
+
+    .DDBottomHyperLink .btn:first-child {
+        margin-left: 0;
+    }
+*/

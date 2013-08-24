@@ -10,7 +10,7 @@
 namespace Site {
     
     
-    public partial class EmailAddress_EditField {
+    public partial class Email_EditField {
         
         /// <summary>
         /// TextBox1 control.

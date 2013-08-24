@@ -12,7 +12,7 @@ namespace Site
 {
 
 
-    public partial class EmailAddressField
+    public partial class EmailField
     {
 
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;

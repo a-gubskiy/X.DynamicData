@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Site
 {
-    public partial class EmailAddressField : System.Web.DynamicData.FieldTemplateUserControl
+    public partial class EmailField : System.Web.DynamicData.FieldTemplateUserControl
     {
         protected override void OnDataBinding(EventArgs e)
         {

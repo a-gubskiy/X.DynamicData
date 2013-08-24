@@ -249,6 +249,27 @@
     <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
       <DependentUpon>Children_Insert.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password.ascx.cs">
+      <DependentUpon>Password.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password.ascx.designer.cs">
+      <DependentUpon>Password.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password_Edit.ascx.cs">
+      <DependentUpon>Password_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password_Edit.ascx.designer.cs">
+      <DependentUpon>Password_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Tel_Edit.ascx.cs">
+      <DependentUpon>Tel_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Tel_Edit.ascx.designer.cs">
+      <DependentUpon>Tel_Edit.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DynamicData\FieldTemplates\Video_Edit.ascx.cs">
       <DependentUpon>Video_Edit.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,19 +298,19 @@
     <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
       <DependentUpon>Decimal_Edit.ascx</DependentUpon>
     </Compile>
-    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.cs">
-      <DependentUpon>EmailAddress.ascx</DependentUpon>
+    <Compile Include="DynamicData\FieldTemplates\Email.ascx.cs">
+      <DependentUpon>Email.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.designer.cs">
-      <DependentUpon>EmailAddress.ascx</DependentUpon>
+    <Compile Include="DynamicData\FieldTemplates\Email.ascx.designer.cs">
+      <DependentUpon>Email.ascx</DependentUpon>
     </Compile>
-    <Compile Include="DynamicData\FieldTemplates\EmailAddress_Edit.ascx.cs">
-      <DependentUpon>EmailAddress_Edit.ascx</DependentUpon>
+    <Compile Include="DynamicData\FieldTemplates\Email_Edit.ascx.cs">
+      <DependentUpon>Email_Edit.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DynamicData\FieldTemplates\EmailAddress_Edit.ascx.designer.cs">
-      <DependentUpon>EmailAddress_Edit.ascx</DependentUpon>
+    <Compile Include="DynamicData\FieldTemplates\Email_Edit.ascx.designer.cs">
+      <DependentUpon>Email_Edit.ascx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
       <DependentUpon>Enumeration.ascx</DependentUpon>
@@ -565,12 +586,15 @@
     <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Children.ascx" />
     <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Password.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Password_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Tel_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Video_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
     <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
-    <Content Include="DynamicData\FieldTemplates\EmailAddress_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Email.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Email_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
     <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\FileImage.ascx" />

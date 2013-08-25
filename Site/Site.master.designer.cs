@@ -85,6 +85,15 @@ namespace Site {
         protected global::System.Web.UI.ScriptManager script_manager;
         
         /// <summary>
+        /// message_update_panel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel message_update_panel;
+        
+        /// <summary>
         /// message_container control.
         /// </summary>
         /// <remarks>

@@ -39,7 +39,8 @@
                 <br />
             </div>
 
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource" EnablePersistedSelection="true" AllowPaging="True" AllowSorting="True" CssClass="table table-bordered table-hover table-condensed grid-view" GridLines="None">
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource" EnablePersistedSelection="true" AllowPaging="True" AllowSorting="True" 
+                CssClass="table table-bordered table-hover table-condensed grid-view" GridLines="None" OnPageIndexChanged="PageIndexChanged">
                 <Columns>
                     <asp:TemplateField>
                         <HeaderTemplate>

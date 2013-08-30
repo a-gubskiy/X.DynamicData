@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Web.DynamicData;
 using System.Web.Routing;
@@ -11,6 +9,11 @@ namespace Site
 {
     public partial class List : XPage
     {
+        private string PageIndexKey
+        {
+            get { return String.Format("PrevPageIndex_{0}", _table.Name).ToLower(); }
+        }
+
         protected void Page_Init(object sender, EventArgs e)
         {
             GridView1.SetMetaTable(_table, _table.GetColumnValuesFromRoute(Context));
@@ -20,7 +23,7 @@ namespace Site
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            
+
             GridDataSource.Include = _table.ForeignKeyColumnsNames;
 
             // Disable various options if the table is readonly
@@ -33,6 +36,20 @@ namespace Site
 
             var dataSourceTable = GridDataSource.GetTable();
             GridView1.ColumnsGenerator = new HideColumnFieldsManager(dataSourceTable);
+
+            if (!IsPostBack && !IsAsync)
+            {
+                if (Request.UrlReferrer != null)
+                {
+                    if (Request.UrlReferrer.ToString().Contains("Edit.aspx"))
+                    {
+                        if (Session[PageIndexKey] != null)
+                        {
+                            GridView1.PageIndex = (int)Session[PageIndexKey];
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -62,15 +79,22 @@ namespace Site
         protected void RemoveSelectedRows(object sender, EventArgs e)
         {
             var result = (from o in GridView1.Rows.Cast<GridViewRow>()
-                let cell = o.Cells[0]
-                let checkbox = cell.Controls[1] as CheckBox
-                where checkbox != null && checkbox.Checked
-                select o);
-            
+                          let cell = o.Cells[0]
+                          let checkbox = cell.Controls[1] as CheckBox
+                          where checkbox != null && checkbox.Checked
+                          select o);
+
             foreach (var row in result)
             {
                 GridView1.DeleteRow(row.RowIndex);
             }
+        }
+
+        protected void PageIndexChanged(object sender, EventArgs e)
+        {
+
+
+            Session.Add(PageIndexKey, GridView1.PageIndex);
         }
     }
 }

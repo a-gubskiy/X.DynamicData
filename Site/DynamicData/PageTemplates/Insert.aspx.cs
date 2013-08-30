@@ -26,7 +26,8 @@ namespace Site
         {
             if (e.Exception == null || e.ExceptionHandled)
             {
-                Response.Redirect(_table.ListActionPath);
+                var url = _table.ListActionPath + Request.Url.Query; //for saving filter on table
+                Response.Redirect(url);
             }
             else
             {

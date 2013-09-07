@@ -141,8 +141,9 @@ namespace Generator
             //Browsable
             if ((property.Name.Contains("Content")) ||
                 (property.Name == "Name") ||
-                (property.Name == "Description") ||
-                (property.Name == "Keywords"))
+                property.Name.Contains("Description") ||
+                property.Name.Contains("Keywords") ||
+                property.Name.Contains("Image"))
             {
                 sb.AppendLine("\t\t[Browsable(false)]");
             }
@@ -157,15 +158,19 @@ namespace Generator
             {
                 sb.AppendLine("\t\t[UIHint(X.Web.Control.Html)]");
             }
-            else if (property.Name.Contains("Image") || property.Name.Contains("Photo"))
+            else if ((property.Name.Contains("Image") || property.Name.Contains("Photo")) && (property.Name != "Image" && property.Name != "Photos"))
             {
                 sb.AppendLine("\t\t[UIHint(X.Web.Control.FileImage)]");
             }
-            else if (property.Name.Contains("Url"))
+            else if (property.Name.Contains("Url") || property.Name.Contains("Link"))
             {
                 sb.AppendLine("\t\t[UIHint(X.Web.Control.Url)]");
             }
             else if (property.Name.Contains("TimeStamp"))
+            {
+                sb.AppendLine("\t\t[UIHint(X.Web.Control.DateTime)]");
+            }
+            else if (property.Name.Contains("Date"))
             {
                 sb.AppendLine("\t\t[UIHint(X.Web.Control.DateTime)]");
             }

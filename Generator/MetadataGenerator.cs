@@ -32,10 +32,7 @@ namespace Generator
                              where o.BaseType != typeof(DbContext)
                              select o).ToList();
 
-                Parallel.ForEach(types, type =>
-                    {
-                        CreateClass(type, directory);
-                    });
+                Parallel.ForEach(types, type => CreateClass(type, directory));
             }
 
             AppDomain.Unload(domain);
@@ -82,8 +79,7 @@ namespace Generator
             sb.AppendLine(String.Empty);
             sb.AppendLine("\t{");
             sb.AppendLine("\t}");
-
-            sb.AppendLine(String.Empty);
+            
             sb.AppendLine(String.Empty);
 
             sb.AppendFormat("\tpublic class {0}Metadata", className);
@@ -158,7 +154,7 @@ namespace Generator
             {
                 sb.AppendLine("\t\t[UIHint(X.Web.Control.Html)]");
             }
-            else if ((property.Name.Contains("Image") || property.Name.Contains("Photo")) && (property.Name != "Image" && property.Name != "Photos"))
+            else if ((property.Name.Contains("Image") || property.Name.Contains("Photo")) && (property.Name != "Images" && property.Name != "Photos"))
             {
                 sb.AppendLine("\t\t[UIHint(X.Web.Control.FileImage)]");
             }

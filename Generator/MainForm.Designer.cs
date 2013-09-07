@@ -83,7 +83,7 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.FileName = "DAL.dll";
             this.openFileDialog.Filter = "Assembly FIles|*.dll";
             // 
             // btnRun

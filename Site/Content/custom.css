@@ -670,8 +670,9 @@ label {
 }
 
 .thumbnail {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 300px !important;
+    max-height: 300px !important;
+    overflow: hidden !important;
 }
 
 a.btn:hover {

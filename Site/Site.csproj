@@ -71,8 +71,9 @@
     <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAzure.Storage.2.0.6.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -958,8 +959,10 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Properties\PublishProfiles\onestarlifemanage - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\onestarlifemanage - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\andrew-gubskiy-com-manage - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\andrew-gubskiy-com-manage - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\onestarlife-com-manage - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\onestarlife-com-manage - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\ckeditor\styles.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />

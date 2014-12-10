@@ -15,7 +15,7 @@ namespace Site
 
             var dataContext = Global.CreateDataContext(Global.Context.DataContextAssemblyLocation);
 
-            var connectionString = dataContext.Connection.ConnectionString;
+            var connectionString = dataContext.Database.Connection.ConnectionString;
 
             connectionString = connectionString.Replace("metadata=res://*/DataModel.csdl|res://*/DataModel.ssdl|res://*/DataModel.msl;", String.Empty);
             connectionString = connectionString.Replace("MultipleActiveResultSets=True", String.Empty);
@@ -39,12 +39,12 @@ namespace Site
 
             OpenTable(sb, Resources.Global.Project);
             AppendUrlLine(sb, Resources.Global.WebApplicationAddress, Global.Context.WebsiteUrl);
-            AppendLine(sb, Resources.Global.WebsiteStorageConnectionString, Global.Context.WebsiteStorageConnectionString);
+            AppendLine(sb, Resources.Global.WebsiteStorageConnectionString, Global.Context.ApplicationStorageConnectionString);
             CloseTable(sb);
 
             OpenTable(sb, Resources.Global.FileUploadPageTitle);
-            AppendLine(sb, Resources.Global.FileStorageConnectionString, Global.Context.FileStorageConnectionString);
-            AppendUrlLine(sb, Resources.Global.FileStorageUrl, Global.Context.FileStorageUrl);
+            AppendLine(sb, Resources.Global.FileStorageConnectionString, Global.Context.StorageConnectionString);
+            AppendUrlLine(sb, Resources.Global.FileStorageUrl, Global.Context.StorageUrl);
             CloseTable(sb);
 
             information.InnerHtml = sb.ToString();
@@ -72,7 +72,7 @@ namespace Site
 
         private static void AppendLine(StringBuilder sb, String title, String value)
         {
-            sb.AppendFormat("<tr><th scope=\"row\">{0}</th><td>{1}<td></tr>", title, value);
+            sb.AppendFormat("<tr><th scope=\"row\">{0}</th><td>{1}</td></tr>", title, value);
         }
     }
 }

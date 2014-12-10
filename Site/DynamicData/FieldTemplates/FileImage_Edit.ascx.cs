@@ -46,11 +46,11 @@ namespace Site
                 return;
                 // no file to download you decide wether this is a valid error
                 // to throw comment out
-                if (!FileUploadEdit.HasFile && String.IsNullOrEmpty(ImageEdit.ImageUrl))
-                {
-                    args.IsValid = false;
-                    CustomValidator1.ErrorMessage = "No file to download";
-                }
+                //if (!FileUploadEdit.HasFile && String.IsNullOrEmpty(ImageEdit.ImageUrl))
+                //{
+                //    args.IsValid = false;
+                //    CustomValidator1.ErrorMessage = "No file to download";
+                //}
             }
         }
 
@@ -65,11 +65,11 @@ namespace Site
                 return;
             }
 
-            var fileName = (String) FieldValue;
+            var fileName = (String)FieldValue;
 
             if (!String.IsNullOrEmpty(fileName))
             {
-                ImageEdit.ImageUrl = Global.Context.FileStorageUrl + fileName;
+                ImageEdit.ImageUrl = Global.Context.StorageUrl + fileName;
                 image_name.Value = fileName;
                 ImageEdit.Visible = true;
             }
@@ -91,7 +91,7 @@ namespace Site
                     Global.UploadFile(FileUploadEdit.FileBytes, fileName);
 
                     image_name.Value = fileName;
-                    ImageEdit.ImageUrl = Global.Context.FileStorageUrl + fileName;
+                    ImageEdit.ImageUrl = Global.Context.StorageUrl + fileName;
                 }
                 catch (Exception ex)
                 {

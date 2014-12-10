@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Specialized;
 using System.ComponentModel.DataAnnotations;
 using System.Web.DynamicData;
@@ -6,58 +6,52 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Site
-{
-    public partial class ForeignKeyField : System.Web.DynamicData.FieldTemplateUserControl
-    {
-        public string NavigateUrl { get; set; }
-
-        //public bool AllowNavigation { get; set; }
-
-        private string GetDisplayString()
-        {
+namespace Site {
+    public partial class ForeignKeyField : System.Web.DynamicData.FieldTemplateUserControl {
+        private bool _allowNavigation = true;
+    
+        public string NavigateUrl { 
+            get;
+            set;
+        }
+    
+        public bool AllowNavigation {
+            get {
+                return _allowNavigation;
+            }
+            set {
+                _allowNavigation = value;
+            }
+        }
+    
+        protected string GetDisplayString() {
             object value = FieldValue;
-
-            if (value == null)
-            {
+            
+            if (value == null) {
                 return FormatFieldValue(ForeignKeyColumn.GetForeignKeyString(Row));
+            } else {
+                return FormatFieldValue(ForeignKeyColumn.ParentTable.GetDisplayString(value));
+            }
+        }
+    
+        protected string GetNavigateUrl() {
+            if (!AllowNavigation) {
+                return null;
             }
             
-            return FormatFieldValue(ForeignKeyColumn.ParentTable.GetDisplayString(value));
-        }
-
-        private string GetNavigateUrl()
-        {
-            //if (!AllowNavigation)
-            //{
-            //    return null;
-            //}
-
-            if (String.IsNullOrEmpty(NavigateUrl))
-            {
+            if (String.IsNullOrEmpty(NavigateUrl)) {
                 return ForeignKeyPath;
             }
-
-            return BuildForeignKeyPath(NavigateUrl);
-        }
-
-        public override string FieldValueString
-        {
-            get
-            {
-                if (FieldValue != null && !String.IsNullOrEmpty(FieldValue.ToString()))
-                {
-                    return String.Format("<a href=\"{0}\" />{1}</a>", GetNavigateUrl(), GetDisplayString());
-                }
-
-                return String.Empty;
+            else {
+                return BuildForeignKeyPath(NavigateUrl);
             }
         }
-
-        public override Control DataControl
-        {
-            get { return Literal1; }
+    
+        public override Control DataControl {
+            get {
+                return HyperLink1;
+            }
         }
-
+    
     }
 }

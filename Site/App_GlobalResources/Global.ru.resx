@@ -291,4 +291,7 @@
   <data name="LoginError" xml:space="preserve">
     <value>В доступе отказано</value>
   </data>
+  <data name="ShowDetails" xml:space="preserve">
+    <value>Детальнее</value>
+  </data>
 </root>

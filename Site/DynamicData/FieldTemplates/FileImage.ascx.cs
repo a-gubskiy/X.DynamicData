@@ -17,7 +17,7 @@ namespace Site
                 {
                     if (!url.ToLower().Contains("http://"))
                     {
-                        url = Global.Context.FileStorageUrl + url;
+                        url = Global.Context.StorageUrl + url;
                     }
 
                    

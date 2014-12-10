@@ -3,18 +3,17 @@
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
-    <h1><%= _table.DisplayName%></h1>
-
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true">
         <DataControls>
             <asp:DataControlReference ControlID="GridView1" />
         </DataControls>
     </asp:DynamicDataManager>
 
+    <h1><%= _table.DisplayName%></h1>
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
+            
             <asp:UpdateProgress ID="UpdateProgress1" runat="server">
                 <ProgressTemplate>
                     <div class="load-progress">
@@ -63,9 +62,9 @@
                 </EmptyDataTemplate>
             </asp:GridView>
 
-            <asp:EntityDataSource ID="GridDataSource" runat="server" EnableDelete="true" />
+            <ef:EntityDataSource ID="GridDataSource" runat="server" EnableDelete="true" />
 
-            <asp:QueryExtender TargetControlID="GridDataSource" ID="GridQueryExtender" runat="server">
+           <asp:QueryExtender TargetControlID="GridDataSource" ID="GridQueryExtender" runat="server">
                 <asp:DynamicFilterExpression ControlID="FilterRepeater" />
             </asp:QueryExtender>
 
@@ -76,12 +75,10 @@
                 <asp:Button OnClick="RemoveSelectedRows" runat="server" ID="RemoveSelected" CssClass="btn btn-danger" Text="<%$ Resources:Global, RemoveSelected %>" OnClientClick="<%$ Resources:Global, AreYourSureToRemoveRecords %>" />
             </div>
 
-
-
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <script type="text/javascript">
+    <script>
         function pageLoad(sender, args) {
             intializeGridViewSelectAllCheckbox();
         }

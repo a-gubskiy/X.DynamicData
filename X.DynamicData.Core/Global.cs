@@ -1,15 +1,12 @@
-﻿using Microsoft.WindowsAzure.Storage;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
-using System.Data.Objects;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.DynamicData;
-using X.Web;
 
 namespace X.DynamicData.Core
 {
@@ -23,12 +20,12 @@ namespace X.DynamicData.Core
         private static MetaModel _metaModel;
 
         public String Title { get; set; }
-       
-        public String WebsiteUrl { get; set; }
-        public String WebsiteStorageConnectionString { get; set; }
 
-        public String FileStorageUrl { get; set; }
-        public String FileStorageConnectionString { get; set; }
+        public String WebsiteUrl { get; set; }
+        public String ApplicationStorageConnectionString { get; set; }
+
+        public String StorageUrl { get; set; }
+        public String StorageConnectionString { get; set; }
 
         public String DataContextAssemblyLocation { get; set; }
         public String Logo { get; set; }
@@ -91,28 +88,29 @@ namespace X.DynamicData.Core
         {
             get { return _context ?? (_context = Load(System.Web.Configuration.WebConfigurationManager.AppSettings)); }
         }
-        
+
         private static Global Load(System.Collections.Specialized.NameValueCollection settings)
         {
             return new Global
                 {
-                    Title = settings["Title"],
-                  
-                    WebsiteUrl = settings["WebsiteUrl"],
-                    WebsiteStorageConnectionString = settings["WebsiteStorageConnectionString"],
+                    Title = settings["title"],
 
-                    FileStorageConnectionString = settings["FileStorageConnectionString"],
-                    FileStorageUrl = settings["FileStorageUrl"],
+                    WebsiteUrl = settings["website-url"],
+                    ApplicationStorageConnectionString  = settings["application-storage-connection-string"],
 
-                    DataContextAssemblyLocation = settings["DataContextAssemblyLocation"],
-                    Logo = settings["Logo"],
+                    StorageConnectionString = settings["storage-connection-string"],
+                    StorageUrl = settings["storage-url"],
+
+                    DataContextAssemblyLocation = settings["data-context-assembly-location"],
+                    Logo = settings["logo"],
                     BlobContainerName = settings["BlobContainerName"],
-                    ScaffoldAllTables = settings["ScaffoldAllTables"] == "true",
-                    ShowLogsInMenu = settings["ShowLogsInMenu"] == "true",
+
+                    ScaffoldAllTables = settings["scaffold-all-tables"] == "true",
+                    ShowLogsInMenu = settings["show-logs-in-menu"] == "true",
                 };
         }
 
-        public static ObjectContext CreateDataContext(string path)
+        public static DbContext CreateDataContext(string path)
         {
             if (path.Contains("~/"))
             {
@@ -126,15 +124,15 @@ namespace X.DynamicData.Core
                                          (o.BaseType.Name.Contains("DbContext") ||
                                           o.BaseType.Name.Contains("ObjectContext"))
                                    select o).FirstOrDefault();
-            
+
             var instance = Activator.CreateInstance(dataContextType);
 
-            if (instance.GetType().BaseType.Name == typeof(ObjectContext).Name)
-            {
-                return (ObjectContext)instance;
-            }
+            //if (instance.GetType().BaseType.Name == typeof(DbContext).Name)
+            //{
+            return (DbContext)instance;
+            //}
 
-            return ((IObjectContextAdapter)instance).ObjectContext;
+            //return ((IObjectContextAdapter)instance).ObjectContext;
         }
 
         private static IEnumerable<Type> GetTypes(string path)
@@ -165,43 +163,45 @@ namespace X.DynamicData.Core
         public static string UploadFile(byte[] bytes, string name)
         {
             name = name.ToLower();
-            var url = String.Format("{0}{1}", Context.FileStorageUrl, name);
+            var url = String.Format("{0}{1}", Context.StorageUrl, name);
 
-            var storageType = GetStorageType(Context.FileStorageConnectionString);
+            var storageType = GetStorageType(Context.StorageConnectionString);
 
             switch (storageType)
             {
                 case Storage.FileSystem:
                     {
-                        var path = String.Format("{0}{1}", Global.Context.FileStorageConnectionString, name);
+                        var path = String.Format("{0}{1}", Global.Context.StorageConnectionString, name);
                         File.WriteAllBytes(path, bytes);
                         break;
                     }
 
                 case Storage.WindowsAzureStorage:
                     {
-                        //Upload to Windows Azure Storage
-                        var storageAccount = CloudStorageAccount.Parse(Context.FileStorageConnectionString);
+                        throw new NotImplementedException();
 
-                        var blobClient = storageAccount.CreateCloudBlobClient();
+                        ////Upload to Windows Azure Storage
+                        //var storageAccount = CloudStorageAccount.Parse(Context.FileStorageConnectionString);
 
-                        // Retrieve a reference to a container. 
-                        var container = blobClient.GetContainerReference(Context.BlobContainerName);
+                        //var blobClient = storageAccount.CreateCloudBlobClient();
 
-                        // Retrieve reference to a blob named "myblob".
-                        var blockBlob = container.GetBlockBlobReference(name);
+                        //// Retrieve a reference to a container. 
+                        //var container = blobClient.GetContainerReference(Context.BlobContainerName);
 
-                        // Create or overwrite the blob with contents from a file.
-                        var stream = new MemoryStream(bytes);
-                        blockBlob.UploadFromStream(stream);
+                        //// Retrieve reference to a blob named "myblob".
+                        //var blockBlob = container.GetBlockBlobReference(name);
 
-                        url = blockBlob.Uri.ToString();
-                        break;
+                        //// Create or overwrite the blob with contents from a file.
+                        //var stream = new MemoryStream(bytes);
+                        //blockBlob.UploadFromStream(stream);
+
+                        //url = blockBlob.Uri.ToString();
+                        //break;
                     }
 
                 case Storage.Ftp:
                     {
-                        var path = Context.FileStorageConnectionString + name;
+                        var path = Context.StorageConnectionString + name;
                         var ftp = new Ftp();
                         ftp.UploadFile(bytes, path);
                         break;
@@ -218,7 +218,7 @@ namespace X.DynamicData.Core
 
         public bool RestarWebApplication()
         {
-            var storageType = GetStorageType(Context.WebsiteStorageConnectionString);
+            var storageType = GetStorageType(Context.ApplicationStorageConnectionString );
 
             try
             {
@@ -226,7 +226,7 @@ namespace X.DynamicData.Core
                 {
                     case Storage.FileSystem:
                         {
-                            var path = Global.Context.WebsiteStorageConnectionString + "web.config";
+                            var path = Global.Context.ApplicationStorageConnectionString  + "web.config";
                             var stream = File.Open(path, FileMode.Open);
                             var streamWriter = new StreamWriter(stream);
                             streamWriter.WriteLine("<!--restart-->");
@@ -242,7 +242,7 @@ namespace X.DynamicData.Core
                         }
                     case Storage.Ftp:
                         {
-                            var path = Context.WebsiteStorageConnectionString + "web.config";
+                            var path = Context.ApplicationStorageConnectionString  + "web.config";
                             var ftp = new Ftp();
                             var bytes = ftp.DownloadFile(path);
                             //var result = System.Text.Encoding.UTF8.GetString(bytes);
@@ -256,7 +256,7 @@ namespace X.DynamicData.Core
                         }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }

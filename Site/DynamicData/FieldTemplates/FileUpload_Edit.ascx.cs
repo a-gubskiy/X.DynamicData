@@ -32,7 +32,7 @@ namespace Site
                                : FieldValueString.Replace("&amp;", "&");
 
             HyperLink1.Text = "Загрузить файл";
-            HyperLink1.NavigateUrl = Global.Context.FileStorageUrl + fileName;
+            HyperLink1.NavigateUrl = Global.Context.StorageUrl + fileName;
 
         }
 

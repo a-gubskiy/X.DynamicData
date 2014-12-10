@@ -69,7 +69,7 @@ namespace Site
 
             if (!String.IsNullOrEmpty(fileName))
             {
-                ImageEdit.ImageUrl = Global.Context.FileStorageUrl + fileName;
+                ImageEdit.ImageUrl = Global.Context.StorageUrl + fileName;
                 image_name.Value = fileName;
                 ImageEdit.Visible = true;
             }
@@ -91,7 +91,7 @@ namespace Site
                     Global.UploadFile(FileUploadEdit.FileBytes, fileName);
 
                     image_name.Value = fileName;
-                    ImageEdit.ImageUrl = Global.Context.FileStorageUrl + fileName;
+                    ImageEdit.ImageUrl = Global.Context.StorageUrl + fileName;
                 }
                 catch (Exception ex)
                 {

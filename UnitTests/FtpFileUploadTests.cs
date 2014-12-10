@@ -20,8 +20,8 @@ namespace UnitTests
                 bytes = stream.ToArray();
             }
 
-            X.DynamicData.Core.Global.Context.FileStorageConnectionString = "ftp://user:passrd@exmple.com";
-            X.DynamicData.Core.Global.Context.FileStorageUrl = "http://exmple.com/static/";
+            X.DynamicData.Core.Global.Context.StorageConnectionString = "ftp://user:passrd@exmple.com";
+            X.DynamicData.Core.Global.Context.StorageUrl = "http://exmple.com/static/";
 
             var url = X.DynamicData.Core.Global.UploadFile(bytes, "test.txt");
 

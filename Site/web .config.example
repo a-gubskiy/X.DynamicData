@@ -1,57 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  For more information on how to configure your ASP.NET application, please visit
-  http://go.microsoft.com/fwlink/?LinkId=169433
-  -->
 <configuration>
   <configSections>
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
     <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
-    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
   </configSections>
 
   <connectionStrings>
-    <add name="Entities" connectionString="" providerName="System.Data.EntityClient" />
+    <add name="Entities" connectionString="connection-string-here" providerName="System.Data.EntityClient" />
   </connectionStrings>
 
   <appSettings>
-    <add key="webpages:Version" value="2.0.0.0" />
-    <add key="webpages:Enabled" value="true" />
-    <add key="enableSimpleMembership" value="false" />
-    <add key="autoFormsAuthentication" value="false" />
-    <add key="PreserveLoginUrl" value="true" />
-    <add key="ClientValidationEnabled" value="true" />
-    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
-
-    <add key="Title" value="" />
-    <add key="Logo" value="" />
-
-    <add key="WebsiteUrl" value="" />
-    <add key="WebsiteStorageConnectionString" value="" />
-
-    <add key="FileStorageConnectionString" value="" />
-    <add key="FileStorageUrl" value="" />
-
-    <add key="BlobContainerName" value="" />
-    
-    <add key="ScaffoldAllTables" value="" />
-
-    <add key="DataContextAssemblyLocation" value="~/DAL.dll" />
+    <add key="title" value="Example Application" />
+    <add key="website-url" value="http://example.com/" />
+    <add key="storage-connection-string" value="c:\www\example.com\files" />
+    <add key="storage-url" value="http://example.com/files" />
+    <add key="application-storage-connection-string" value=""/>
+    <add key="scaffold-all-tables" value="false" />
+    <add key="show-logs-in-menu" value="true" />
+    <add key="logo" value="http://exmaple.com/logo.svg" />
+    <add key="data-context-assembly-location" value="C:\X\microkhim.com.ua\Site\bin\DAL.dll" />
   </appSettings>
 
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
+      <parameters>
+        <parameter value="v11.0" />
+      </parameters>
+    </defaultConnectionFactory>
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+  </entityFramework>
+
   <system.web>
-    <httpRuntime requestValidationMode="2.0" targetFramework="4.5" />
-    <compilation targetFramework="4.5" debug="true" />
-    <roleManager enabled="true" />
-    <pages controlRenderingCompatibilityVersion="4.0">
-      <namespaces>
-        <add namespace="System.Web.Helpers" />
-        <add namespace="System.Web.Mvc" />
-        <add namespace="System.Web.Mvc.Ajax" />
-        <add namespace="System.Web.Mvc.Html" />
-        <add namespace="System.Web.Routing" />
-        <add namespace="System.Web.WebPages" />
-      </namespaces>
+    <pages>
+      <controls>
+        <add tagPrefix="ef" assembly="Microsoft.AspNet.EntityDataSource" namespace="Microsoft.AspNet.EntityDataSource" />
+      </controls>
     </pages>
+
+    <compilation debug="true" />
+
     <authentication mode="Forms">
       <forms name="auth" loginUrl="~/System/Login.aspx" protection="All" timeout="30">
         <credentials passwordFormat="Clear">
@@ -60,15 +49,19 @@
         </credentials>
       </forms>
     </authentication>
+
     <membership defaultProvider="CredentialsMembershipProvider" userIsOnlineTimeWindow="15">
       <providers>
         <clear />
-        <add name="CredentialsMembershipProvider" type="X.Web.Security.CredentialsMembershipProvider" />
+        <add name="CredentialsMembershipProvider" type="X.Web.CredentialsMembershipProvider" />
       </providers>
     </membership>
+
     <globalization uiCulture="ru" />
+
   </system.web>
-  <system.webServer>
+
+  <!--<system.webServer>
     <validation validateIntegratedModeConfiguration="false" />
     <handlers>
       <remove name="ExtensionlessUrlHandler-ISAPI-4.0_32bit" />
@@ -78,7 +71,7 @@
       <add name="ExtensionlessUrlHandler-ISAPI-4.0_64bit" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
       <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
     </handlers>
-  </system.webServer>
+  </system.webServer>-->
 
   <!-- 
   AUTH START 
@@ -90,23 +83,41 @@
   AUTH END 
   -->
 
-  <entityFramework>
-    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
-      <parameters>
-        <parameter value="v11.0" />
-      </parameters>
-    </defaultConnectionFactory>
-  </entityFramework>
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
-        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" />
+        <assemblyIdentity name="System.Web.Razor" publicKeyToken="31BF3856AD364E35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
       </dependentAssembly>
       <dependentAssembly>
-        <assemblyIdentity name="Microsoft.Data.OData" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-5.6.0.0" newVersion="5.6.0.0" />
+        <assemblyIdentity name="System.Web.WebPages.Razor" publicKeyToken="31BF3856AD364E35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.6.5135.21930" newVersion="1.6.5135.21930" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Antlr3.Runtime" publicKeyToken="eb42632606e9261f" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.5.0.2" newVersion="3.5.0.2" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.2.0" newVersion="5.2.2.0" />
       </dependentAssembly>
     </assemblyBinding>
   </runtime>
+
 </configuration>

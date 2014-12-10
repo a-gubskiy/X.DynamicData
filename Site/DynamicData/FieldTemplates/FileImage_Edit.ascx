@@ -2,7 +2,7 @@
 
 
 <span class="thumbnail">
-    <asp:Image ID="ImageEdit" ImageUrl="<%# String.IsNullOrEmpty(FieldValueString) ? String.Empty : X.DynamicData.Core.Global.Context.FileStorageUrl + FieldValueString %>" runat="server" />
+    <asp:Image ID="ImageEdit" ImageUrl="<%# String.IsNullOrEmpty(FieldValueString) ? String.Empty : X.DynamicData.Core.Global.Context.StorageUrl + FieldValueString %>" runat="server" />
 </span>
 
 <br />

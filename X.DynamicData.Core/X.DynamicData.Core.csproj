@@ -88,6 +88,7 @@
     <Compile Include="Link.cs" />
     <Compile Include="Navigator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage.cs" />
     <Compile Include="XMasterPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

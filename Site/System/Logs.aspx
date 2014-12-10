@@ -39,7 +39,6 @@
                     </div>
                     <!-- /.modal -->
 
-                    <%--<a href="#" onclick="javascript:bootbox.alert('<%# Eval("Message") %>');"><%=Resources.Global.ShowMessage %></a>--%>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

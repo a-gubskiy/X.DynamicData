@@ -1,30 +1,38 @@
-﻿using System;
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Web.DynamicData;
+using System.Web.Routing;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using X.DynamicData.Core;
+using System.Web.UI.WebControls.Expressions;
 
 namespace Site
 {
-    public partial class ListDetails : XPage
+    public partial class ListDetails : System.Web.UI.Page
     {
+        protected MetaTable table;
+
         protected void Page_Init(object sender, EventArgs e)
         {
-            GridView1.SetMetaTable(_table, _table.GetColumnValuesFromRoute(Context));
-            FormView1.SetMetaTable(_table);
-            GridDataSource.EntityTypeFilter = _table.EntityType.Name;
-            DetailsDataSource.EntityTypeFilter = _table.EntityType.Name;
+            table = DynamicDataRouteHandler.GetRequestMetaTable(Context);
+            GridView1.SetMetaTable(table, table.GetColumnValuesFromRoute(Context));
+            FormView1.SetMetaTable(table);
+            GridDataSource.EntityTypeFilter = table.EntityType.Name;
+            DetailsDataSource.EntityTypeFilter = table.EntityType.Name;
+
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridDataSource.Include = _table.ForeignKeyColumnsNames;
-            DetailsDataSource.Include = _table.ForeignKeyColumnsNames;
+            Title = table.DisplayName;
+            GridDataSource.Include = table.ForeignKeyColumnsNames;
+            DetailsDataSource.Include = table.ForeignKeyColumnsNames;
 
             // Selection from url
-            if (!Page.IsPostBack && _table.HasPrimaryKey)
+            if (!Page.IsPostBack && table.HasPrimaryKey)
             {
-                GridView1.SelectedPersistedDataKey = _table.GetDataKeyFromRoute();
+                GridView1.SelectedPersistedDataKey = table.GetDataKeyFromRoute();
                 if (GridView1.SelectedPersistedDataKey == null)
                 {
                     GridView1.SelectedIndex = 0;
@@ -32,7 +40,7 @@ namespace Site
             }
 
             // Disable various options if the table is readonly
-            if (_table.IsReadOnly)
+            if (table.IsReadOnly)
             {
                 DetailsPanel.Visible = false;
                 GridView1.AutoGenerateSelectButton = false;
@@ -136,5 +144,6 @@ namespace Site
                 }
             }
         }
+
     }
 }

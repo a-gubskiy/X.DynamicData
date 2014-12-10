@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using System.ComponentModel;
-using System.Data.Objects.DataClasses;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Web.UI;
 
 namespace Site
@@ -12,11 +12,16 @@ namespace Site
             base.OnDataBinding(e);
 
             object entity;
-            var rowDescriptor = Row as ICustomTypeDescriptor;
+            ICustomTypeDescriptor rowDescriptor = Row as ICustomTypeDescriptor;
+            if (rowDescriptor != null)
+            {
+                entity = rowDescriptor.GetPropertyOwner(null);
+            }
+            else
+            {
+                entity = Row;
+            }
 
-            entity = rowDescriptor != null ? rowDescriptor.GetPropertyOwner(null) : Row;
-
-            // Get the collection and make sure it's loaded
             var entityCollection = Column.EntityTypeProperty.GetValue(entity, null);
             var realEntityCollection = entityCollection as RelatedEnd;
             if (realEntityCollection != null && !realEntityCollection.IsLoaded)
@@ -24,15 +29,16 @@ namespace Site
                 realEntityCollection.Load();
             }
 
-
-            // Bind the repeater to the list of children entities
             Repeater1.DataSource = entityCollection;
             Repeater1.DataBind();
         }
 
         public override Control DataControl
         {
-            get { return Repeater1; }
+            get
+            {
+                return Repeater1;
+            }
         }
 
     }

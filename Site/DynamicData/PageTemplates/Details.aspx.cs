@@ -1,30 +1,36 @@
-﻿using System;
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Web.DynamicData;
+using System.Web.Routing;
+using System.Web.UI;
 using System.Web.UI.WebControls;
-using X.DynamicData.Core;
+using System.Web.UI.WebControls.Expressions;
 
 namespace Site
 {
-    public partial class Details : XPage
+    public partial class Details : System.Web.UI.Page
     {
+        protected MetaTable table;
+
         protected void Page_Init(object sender, EventArgs e)
         {
-            FormView1.SetMetaTable(_table);
-            DetailsDataSource.EntityTypeFilter = _table.EntityType.Name;
+            table = DynamicDataRouteHandler.GetRequestMetaTable(Context);
+            FormView1.SetMetaTable(table);
+            DetailsDataSource.EntityTypeFilter = table.EntityType.Name;
         }
 
-        protected override void OnLoad(EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            base.OnLoad(e);
-
-            DetailsDataSource.Include = _table.ForeignKeyColumnsNames;
+            Title = table.DisplayName;
+            DetailsDataSource.Include = table.ForeignKeyColumnsNames;
         }
 
         protected void FormView1_ItemDeleted(object sender, FormViewDeletedEventArgs e)
         {
             if (e.Exception == null || e.ExceptionHandled)
             {
-                Response.Redirect(_table.ListActionPath);
+                Response.Redirect(table.ListActionPath);
             }
         }
 

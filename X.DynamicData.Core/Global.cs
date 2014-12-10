@@ -1,15 +1,14 @@
-﻿using Microsoft.WindowsAzure.Storage;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
-using System.Data.Objects;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.DynamicData;
-using X.Web;
 
 namespace X.DynamicData.Core
 {
@@ -23,7 +22,7 @@ namespace X.DynamicData.Core
         private static MetaModel _metaModel;
 
         public String Title { get; set; }
-       
+
         public String WebsiteUrl { get; set; }
         public String WebsiteStorageConnectionString { get; set; }
 
@@ -91,20 +90,20 @@ namespace X.DynamicData.Core
         {
             get { return _context ?? (_context = Load(System.Web.Configuration.WebConfigurationManager.AppSettings)); }
         }
-        
+
         private static Global Load(System.Collections.Specialized.NameValueCollection settings)
         {
             return new Global
                 {
                     Title = settings["Title"],
-                  
+
                     WebsiteUrl = settings["WebsiteUrl"],
                     WebsiteStorageConnectionString = settings["WebsiteStorageConnectionString"],
 
                     FileStorageConnectionString = settings["FileStorageConnectionString"],
                     FileStorageUrl = settings["FileStorageUrl"],
 
-                    DataContextAssemblyLocation = settings["DataContextAssemblyLocation"],
+                    DataContextAssemblyLocation = settings["data-context-assembly-location"],
                     Logo = settings["Logo"],
                     BlobContainerName = settings["BlobContainerName"],
                     ScaffoldAllTables = settings["ScaffoldAllTables"] == "true",
@@ -112,7 +111,7 @@ namespace X.DynamicData.Core
                 };
         }
 
-        public static ObjectContext CreateDataContext(string path)
+        public static DbContext CreateDataContext(string path)
         {
             if (path.Contains("~/"))
             {
@@ -126,15 +125,15 @@ namespace X.DynamicData.Core
                                          (o.BaseType.Name.Contains("DbContext") ||
                                           o.BaseType.Name.Contains("ObjectContext"))
                                    select o).FirstOrDefault();
-            
+
             var instance = Activator.CreateInstance(dataContextType);
 
-            if (instance.GetType().BaseType.Name == typeof(ObjectContext).Name)
-            {
-                return (ObjectContext)instance;
-            }
+            //if (instance.GetType().BaseType.Name == typeof(DbContext).Name)
+            //{
+                return (DbContext)instance;
+            //}
 
-            return ((IObjectContextAdapter)instance).ObjectContext;
+            //return ((IObjectContextAdapter)instance).ObjectContext;
         }
 
         private static IEnumerable<Type> GetTypes(string path)
@@ -167,96 +166,96 @@ namespace X.DynamicData.Core
             name = name.ToLower();
             var url = String.Format("{0}{1}", Context.FileStorageUrl, name);
 
-            var storageType = GetStorageType(Context.FileStorageConnectionString);
+            //var storageType = GetStorageType(Context.FileStorageConnectionString);
 
-            switch (storageType)
-            {
-                case Storage.FileSystem:
-                    {
-                        var path = String.Format("{0}{1}", Global.Context.FileStorageConnectionString, name);
-                        File.WriteAllBytes(path, bytes);
-                        break;
-                    }
+            //switch (storageType)
+            //{
+            //    case Storage.FileSystem:
+            //        {
+            //            var path = String.Format("{0}{1}", Global.Context.FileStorageConnectionString, name);
+            //            File.WriteAllBytes(path, bytes);
+            //            break;
+            //        }
 
-                case Storage.WindowsAzureStorage:
-                    {
-                        //Upload to Windows Azure Storage
-                        var storageAccount = CloudStorageAccount.Parse(Context.FileStorageConnectionString);
+            //    case Storage.WindowsAzureStorage:
+            //        {
+            //            //Upload to Windows Azure Storage
+            //            var storageAccount = CloudStorageAccount.Parse(Context.FileStorageConnectionString);
 
-                        var blobClient = storageAccount.CreateCloudBlobClient();
+            //            var blobClient = storageAccount.CreateCloudBlobClient();
 
-                        // Retrieve a reference to a container. 
-                        var container = blobClient.GetContainerReference(Context.BlobContainerName);
+            //            // Retrieve a reference to a container. 
+            //            var container = blobClient.GetContainerReference(Context.BlobContainerName);
 
-                        // Retrieve reference to a blob named "myblob".
-                        var blockBlob = container.GetBlockBlobReference(name);
+            //            // Retrieve reference to a blob named "myblob".
+            //            var blockBlob = container.GetBlockBlobReference(name);
 
-                        // Create or overwrite the blob with contents from a file.
-                        var stream = new MemoryStream(bytes);
-                        blockBlob.UploadFromStream(stream);
+            //            // Create or overwrite the blob with contents from a file.
+            //            var stream = new MemoryStream(bytes);
+            //            blockBlob.UploadFromStream(stream);
 
-                        url = blockBlob.Uri.ToString();
-                        break;
-                    }
+            //            url = blockBlob.Uri.ToString();
+            //            break;
+            //        }
 
-                case Storage.Ftp:
-                    {
-                        var path = Context.FileStorageConnectionString + name;
-                        var ftp = new Ftp();
-                        ftp.UploadFile(bytes, path);
-                        break;
-                    }
-                case Storage.Unknown:
-                    {
-                        throw new Exception("Unknow storage type");
-                        break;
-                    }
-            }
+            //    case Storage.Ftp:
+            //        {
+            //            var path = Context.FileStorageConnectionString + name;
+            //            var ftp = new Ftp();
+            //            ftp.UploadFile(bytes, path);
+            //            break;
+            //        }
+            //    case Storage.Unknown:
+            //        {
+            //            throw new Exception("Unknow storage type");
+            //            break;
+            //        }
+            //}
 
             return url;
         }
 
         public bool RestarWebApplication()
         {
-            var storageType = GetStorageType(Context.WebsiteStorageConnectionString);
+            //var storageType = GetStorageType(Context.WebsiteStorageConnectionString);
 
             try
             {
-                switch (storageType)
-                {
-                    case Storage.FileSystem:
-                        {
-                            var path = Global.Context.WebsiteStorageConnectionString + "web.config";
-                            var stream = File.Open(path, FileMode.Open);
-                            var streamWriter = new StreamWriter(stream);
-                            streamWriter.WriteLine("<!--restart-->");
-                            stream.Close();
-                            var text = File.ReadAllText(path).Replace("<!--restart-->", String.Empty);
-                            File.WriteAllText(path, text);
-                            break;
-                        }
-                    case Storage.WindowsAzureStorage:
-                        {
-                            throw new NotImplementedException();
-                            break;
-                        }
-                    case Storage.Ftp:
-                        {
-                            var path = Context.WebsiteStorageConnectionString + "web.config";
-                            var ftp = new Ftp();
-                            var bytes = ftp.DownloadFile(path);
-                            //var result = System.Text.Encoding.UTF8.GetString(bytes);
-                            ftp.UploadFile(bytes, path);
-                            break;
-                        }
-                    case Storage.Unknown:
-                        {
-                            throw new Exception("Unknow storage type");
-                            break;
-                        }
-                }
+                //switch (storageType)
+                //{
+                //    case Storage.FileSystem:
+                //        {
+                //            var path = Global.Context.WebsiteStorageConnectionString + "web.config";
+                //            var stream = File.Open(path, FileMode.Open);
+                //            var streamWriter = new StreamWriter(stream);
+                //            streamWriter.WriteLine("<!--restart-->");
+                //            stream.Close();
+                //            var text = File.ReadAllText(path).Replace("<!--restart-->", String.Empty);
+                //            File.WriteAllText(path, text);
+                //            break;
+                //        }
+                //    case Storage.WindowsAzureStorage:
+                //        {
+                //            throw new NotImplementedException();
+                //            break;
+                //        }
+                //    case Storage.Ftp:
+                //        {
+                //            var path = Context.WebsiteStorageConnectionString + "web.config";
+                //            var ftp = new Ftp();
+                //            var bytes = ftp.DownloadFile(path);
+                //            //var result = System.Text.Encoding.UTF8.GetString(bytes);
+                //            ftp.UploadFile(bytes, path);
+                //            break;
+                //        }
+                //    case Storage.Unknown:
+                //        {
+                //            throw new Exception("Unknow storage type");
+                //            break;
+                //        }
+                //}
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
@@ -264,25 +263,25 @@ namespace X.DynamicData.Core
             return true;
         }
 
-        private static Storage GetStorageType(string path)
-        {
-            if (String.IsNullOrEmpty(path))
-            {
-                return Storage.Unknown;
-            }
+        //private static Storage GetStorageType(string path)
+        //{
+        //    if (String.IsNullOrEmpty(path))
+        //    {
+        //        return Storage.Unknown;
+        //    }
 
-            if (path.Contains("DefaultEndpointsProtocol"))
-            {
-                return Storage.WindowsAzureStorage;
-            }
+        //    if (path.Contains("DefaultEndpointsProtocol"))
+        //    {
+        //        return Storage.WindowsAzureStorage;
+        //    }
 
-            if (path.Contains("@"))
-            {
-                return Storage.Ftp;
-            }
+        //    if (path.Contains("@"))
+        //    {
+        //        return Storage.Ftp;
+        //    }
 
-            return Storage.FileSystem;
-        }
+        //    return Storage.FileSystem;
+        //}
 
         public static bool CanCreateDataContext()
         {

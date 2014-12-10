@@ -1,40 +1,56 @@
-﻿using System;
+using System;
+using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations;
+using System.Web.DynamicData;
+using System.Web;
 using System.Web.UI;
-using X.DynamicData.Core;
+using System.Web.UI.WebControls;
 
-namespace Site
-{
-    public partial class ChildrenField : System.Web.DynamicData.FieldTemplateUserControl
-    {
-        public string NavigateUrl { get; set; }
-
-        public override string FieldValueString
-        {
-            get
-            {
-                String link;
-                String text;
-
-                if (String.IsNullOrEmpty(NavigateUrl))
-                {
-                    link = ChildrenPath;
-                    text = Global.GetText("ViewChildRecords");
-
-                }
-                else
-                {
-                    link = BuildChildrenPath(NavigateUrl);
-                    text = ChildrenColumn.ChildTable.DisplayName;
-                }                 
-
-                return String.Format("<a target=\"_{2}\" class=\"btn btn-default\" href=\"{0}\" />{1}&nbsp;&nbsp;<i class=\"glyphicon glyphicon-arrow-right\"></i></a>", link, text, ChildrenColumn.ChildTable.Name);
+namespace Site {
+    public partial class ChildrenField : System.Web.DynamicData.FieldTemplateUserControl {
+        private bool _allowNavigation = true;
+        private string _navigateUrl;
+    
+        public string NavigateUrl {
+            get {
+                return _navigateUrl;
+            }
+            set {
+                _navigateUrl = value;
             }
         }
-
-        public override Control DataControl
-        {
-            get { return Literal1; }
+    
+        public bool AllowNavigation {
+            get {
+                return _allowNavigation;
+            }
+            set {
+                _allowNavigation = value;
+            }
         }
-
+        
+        protected void Page_Load(object sender, EventArgs e) {
+            HyperLink1.Text = "View " + ChildrenColumn.ChildTable.DisplayName;
+        }
+    
+        protected string GetChildrenPath() {
+            if (!AllowNavigation) {
+                return null;
+            }
+    
+            if (String.IsNullOrEmpty(NavigateUrl)) {
+                return ChildrenPath;
+            }
+            else {
+                return BuildChildrenPath(NavigateUrl);
+            }
+        }
+    
+        public override Control DataControl {
+            get {
+                return HyperLink1;
+            }
+        }
+    
     }
 }

@@ -2,10 +2,6 @@
 
 <asp:Content ID="main_content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-   <%-- <asp:Login ID="login_control" RenderOuterTable="False" runat="server" OnAuthenticate="LoginControlAuthenticate" DisplayRememberMe="False" TitleTextStyle-CssClass="login-title">
-        <LoginButtonStyle CssClass="btn btn-default" />
-    </asp:Login>--%>
-                  
     <div class="form-signin">
         <h2 runat="server" id="login_title" class="form-signin-heading">Please sign in</h2>     
         <asp:TextBox ID="t_login" runat="server" CssClass="form-control" placeholder="Login" autofocus></asp:TextBox>      

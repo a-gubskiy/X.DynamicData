@@ -15,7 +15,7 @@ namespace Site
 
             var dataContext = Global.CreateDataContext(Global.Context.DataContextAssemblyLocation);
 
-            var connectionString = dataContext.Connection.ConnectionString;
+            var connectionString = dataContext.Database.Connection.ConnectionString;
 
             connectionString = connectionString.Replace("metadata=res://*/DataModel.csdl|res://*/DataModel.ssdl|res://*/DataModel.msl;", String.Empty);
             connectionString = connectionString.Replace("MultipleActiveResultSets=True", String.Empty);

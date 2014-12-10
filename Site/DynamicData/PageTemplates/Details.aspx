@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" CodeBehind="Details.aspx.cs" Inherits="Site.Details" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.master" CodeBehind="Details.aspx.cs" Inherits="Site.Details" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true">
@@ -7,7 +7,7 @@
         </DataControls>
     </asp:DynamicDataManager>
 
-    <h1>Entry from table <%= _table.DisplayName %></h1>
+    <h2 class="DDSubHeader">Entry from table <%= table.DisplayName %></h2>
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
@@ -21,8 +21,9 @@
                         <asp:DynamicEntity runat="server" />
                         <tr class="td">
                             <td colspan="2">
-                                <asp:DynamicHyperLink runat="server" Action="Edit" CssClass="btn btn-primary" Text="Редкатировать" />
-                                <asp:LinkButton runat="server" CommandName="Delete" CssClass="btn btn-danger" Text="Удалить" OnClientClick='return confirm("Are you sure you want to delete this item?");' />
+                                <asp:DynamicHyperLink runat="server" Action="Edit" Text="Edit" />
+                                <asp:LinkButton runat="server" CommandName="Delete" Text="Delete"
+                                    OnClientClick='return confirm("Are you sure you want to delete this item?");' />
                             </td>
                         </tr>
                     </table>
@@ -32,7 +33,7 @@
                 </EmptyDataTemplate>
             </asp:FormView>
 
-            <asp:EntityDataSource ID="DetailsDataSource" runat="server" EnableDelete="true" />
+            <ef:EntityDataSource ID="DetailsDataSource" runat="server" EnableDelete="true" />
 
             <asp:QueryExtender TargetControlID="DetailsDataSource" ID="DetailsQueryExtender" runat="server">
                 <asp:DynamicRouteExpression />
@@ -41,7 +42,7 @@
             <br />
 
             <div class="DDBottomHyperLink">
-                <asp:DynamicHyperLink ID="ListHyperLink" CssClass="btn btn-default btn-list" runat="server" Action="List">Show all items</asp:DynamicHyperLink>
+                <asp:DynamicHyperLink CssClass="btn btn-default" ID="ListHyperLink" runat="server" Action="List">Show all items</asp:DynamicHyperLink>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

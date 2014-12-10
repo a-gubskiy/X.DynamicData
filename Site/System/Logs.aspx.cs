@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using X.DynamicData.Core;
 
@@ -24,7 +21,6 @@ namespace Site
 
         private IEnumerable<dynamic> GetData()
         {
-
             var logs = new EventLog("application", ".").Entries.Cast<EventLogEntry>();
 
             var entries = (from o in logs
@@ -34,9 +30,10 @@ namespace Site
                                {
                                    o.InstanceId,
                                    Time = o.TimeGenerated,
-                                   Message = o.Message.Replace("\r", "").Replace("\n", "").Replace("\\", "\\\\"),
+                                   Message = Server.HtmlEncode(o.Message).Replace("\r", "").Replace("\n", "").Replace("\\", "\\\\"),
                                    Title = o.Message.Substring(0, 20),
-                                   o.Category
+                                   o.Category,
+                                   Id = string.Format("d{0}", Guid.NewGuid())
                                }).ToList();
 
             return entries;

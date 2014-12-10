@@ -1,28 +1,26 @@
-﻿using System.Web.DynamicData;
+using System;
+using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations;
+using System.Web.DynamicData;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace Site
-{
-    public partial class BooleanField : FieldTemplateUserControl
-    {
-        public override string FieldValueString
-        {
-            get
-            {
-                object val = FieldValue;
-
-                if (val != null && (bool)val == true)
-                {
-                    return "<input type=\"checkbox\" disabled=\"True\" checked=\"True\" />";
-                }
-
-                return "<input type=\"checkbox\" disabled=\"True\" />";
+namespace Site {
+    public partial class BooleanField : System.Web.DynamicData.FieldTemplateUserControl {
+        protected override void OnDataBinding(EventArgs e) {
+            base.OnDataBinding(e);
+    
+            object val = FieldValue;
+            if (val != null)
+                CheckBox1.Checked = (bool) val;
+        }
+    
+        public override Control DataControl {
+            get {
+                return CheckBox1;
             }
         }
-
-        public override Control DataControl
-        {
-            get { return Literal1; }
-        }
+    
     }
 }

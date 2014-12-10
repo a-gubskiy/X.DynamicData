@@ -35,8 +35,7 @@ namespace Site
             {
                 ShowMessage(Resources.Global.ModelIsEmpty, Resources.Global.Warning, MessageBoxIcon.Warning);
             }
-
-
+            
             login_title.InnerHtml = String.Format("{0}: <strong>{1}</strong>.<br />{2}: <strong>{3}</strong>.",
                 Resources.Global.YouWorkWithProject, Global.Context.Title, Resources.Global.YouLoginAs, WebSecurity.CurrentUserName);
         }

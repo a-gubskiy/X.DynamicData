@@ -42,7 +42,9 @@ namespace Site
 
             if (!String.IsNullOrEmpty(address))
             {
-                map.Attributes["src"] = GenerateMapUrl(address);
+                String.Format(
+                    "<iframe class=\"map\" src=\"{0}\" width=\"600\" height=\"250\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\"></iframe>",
+                    GenerateMapUrl(address));
             }
         }
 

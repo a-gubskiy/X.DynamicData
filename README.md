@@ -47,3 +47,7 @@ and ftp://user:password @ example.com / wwwroot / site / static
 - And more
 
 For more details about the system can be found in the publication: http://habrahabr.ru/post/181804/ (russian)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ernado-x/x.dynamicdata/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

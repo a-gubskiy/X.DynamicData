@@ -3,7 +3,7 @@ X.DynamicData
 
 Modern Dynamic Data Project (based on ASP.NET Dynamic Data)
 
-#Initial configuration of the system
+# Initial configuration of the system
 
 To configure the file system, you must specify a value web.cofig such fields as:
 - title - the title of the project
@@ -19,17 +19,17 @@ To configure the file system, you must specify a value web.cofig such fields as:
 It is also necessary to add to the configuration file connection string to the database from the main web application.
 
 
-#Download files
+# Download files
 
 Data management system  and managed web-based application can be located on different hosts. Now we support three versions of interaction with the file storage web application:
 
 * The file system
 * FTP
 
-###The control system and web application are on the same server
+### The control system and web application are on the same server
 In this case, the parameters WebsiteUrl, WebsiteStorageConnectionString, StorageUrl and StorageConnectionString need to write the path to the appropriate directories web application.
 
-###The control system and web application servers are on different server (via FTP)
+### The control system and web application servers are on different server (via FTP)
 In this case, the WebsiteStorageConnectionString and StorageConnectionString filled strokjy connect to the FTP type:
 ftp://user:password @ example.com / wwwroot / site /
 and ftp://user:password @ example.com / wwwroot / site / static
@@ -47,7 +47,3 @@ and ftp://user:password @ example.com / wwwroot / site / static
 - And more
 
 For more details about the system can be found in the publication: http://habrahabr.ru/post/181804/ (russian)
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ernado-x/x.dynamicdata/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
